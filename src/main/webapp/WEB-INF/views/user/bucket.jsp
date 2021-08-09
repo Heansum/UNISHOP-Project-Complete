@@ -108,19 +108,19 @@
 									<div class="minibox-img">
 										<!-- 이미지 -->
 										<img id="img1"
-											src="/upload/${bucketProduct.image}"
+											src="/upload/${bucketProduct.product.image}"
 											class="rounded float" alt="...">
 									</div>
 
 									<!-- 제품 이름 -->
 									<div class="product-inforamtion" style="font-weight: 800;">
-										${bucketProduct.productname}</div>
+										${bucketProduct.product.productname}</div>
 
 									<!-- 사이즈 -->
 									<div class="product-size">
 										size
 										<!-- 여기에 사이즈 EL 표현식 -->
-										<input class="num-wrap" value="${bucketProduct.size}" readonly>
+										<input class="num-wrap" value="${bucketProduct.product.size}" readonly>
 									</div>
 									<!-- 상품 페이지 버튼 -->
 									<div class="product-button">
@@ -136,7 +136,7 @@
 								<td>
 									<div class="info-align-box">
 										<!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
-										${bucketProduct.price}
+										${bucketProduct.product.price}
 									</div>
 								</td>
 								<!-- 수량 -->

@@ -11,8 +11,12 @@ import org.springframework.stereotype.Repository;
 public interface BucketProductsRepository extends JpaRepository<BucketProducts, Integer>{
 
 	@Query(value = "SELECT * FROM bucket_products WHERE user_id = :id", nativeQuery = true)
-	List<BucketProducts> mFindAllByProductId(int id);
+	List<BucketProducts> mFindAllByUserId(int id);
 	
-	@Query(value = "SELECT productname FROM bucket_products WHERE user_id = :id", nativeQuery = true)
+	@Query(value = "SELECT productname FROM product WHERE id = (SELECT product_id FROM bucket_products WHERE user_id = :id)", nativeQuery = true)
 	List<String> mFindByUserId(int id);
+	// UserId, 
+	
+	@Query(value = "SELECT product_id FROM bucket_products WHERE user_id = :id", nativeQuery = true)
+	int testByUserId(int id);
 }
