@@ -50,14 +50,14 @@ public class BucketController {
 		System.out.println("유저가 선택한 상품의 product고유 Id : " + bucket.getProduct().getId());
 		System.out.println("유저가 선택한 상품 이름 : " + bucket.getProduct().getProductname());
 		System.out.println("유저의 프라이머리 키: " + principal.getId());
-		System.out.println(bucketProductsRepository.mFindByUserId(principal.getId()));
+		System.out.println(bucketProductsRepository.mFindProductIdByUserId(principal.getId()));
 		
-		String UserChoiceProductName = bucket.getProduct().getProductname();
-		List<String> bucketEntityProNameList = null;
-		// 유저id로 productname을 가져온다
-		bucketEntityProNameList = bucketProductsRepository.mFindByUserId(principal.getId());
+		Integer UserChoiceProductId = bucket.getProduct().getId();
+		List<Integer> bucketEntityProIdList = null;
+		// 유저id로 productId을 가져온다
+		bucketEntityProIdList = bucketProductsRepository.mFindProductIdByUserId(principal.getId());
 
-		int size = bucketEntityProNameList.size();
+		int size = bucketEntityProIdList.size();
 		System.out.println("리스트 사이즈 : " + size);
 		// 고객이 상품을 조금이라도 넣었을 때
 
@@ -68,12 +68,11 @@ public class BucketController {
 		// 그렇지 않으면 DB에 저장해주자.
 		int num = 0;
 		for (int i = 0; i < size; i++) {
-
-			if (UserChoiceProductName.equals(bucketEntityProNameList.get(i))) {
-				System.out.println(UserChoiceProductName + " : 유저가 선택한 이름이에요!");
-				System.out.println(bucketEntityProNameList.get(i) + "for문안의 이름 값이에요!" + "인덱스번호: " + i);
+			if (UserChoiceProductId.equals(bucketEntityProIdList.get(i))) {
+				System.out.println(UserChoiceProductId + " : 유저가 선택한 productId이에요!");
+				System.out.println(bucketEntityProIdList.get(i) + "for문 안의 productId 값이에요!" + "인덱스번호: " + i);
 				num++;
-				System.out.println(num);
+				System.out.println("num : " + num);
 			}
 		}
 		// num의 값은 결국 곂치는 이름의 수를 의미하는데 (0807)
@@ -165,10 +164,25 @@ public class BucketController {
 //		return "ok";
 	}
 
-	// 물건 지우는 컨트롤러
+	// 장바구니에서 물건 지우는 컨트롤러
 	@DeleteMapping("/bucket/delete")
-	public @ResponseBody void bucketProductDeleteById(@RequestBody BucketProducts bucket) {
-		bucketProductsRepository.deleteById(bucket.getId());
+	public @ResponseBody void bucketProductDeleteById(@RequestBody Product product) {
+		// 받는 값은 productId 값이다 
+		
+		User user = (User) session.getAttribute("principal");
+		
+		BucketProducts bucket = new BucketProducts();
+		// productId
+		System.out.println("productId 입니다! : "+product.getId());
+		// UserId
+		System.out.println("userId 입니다! : "+user.getId());
+		
+		// Bucket의 Id를 가져온다 
+		
+		bucketProductsRepository.mDeleteBucketProductsIdByProductId(product.getId(), user.getId());
+		System.out.println("DELETE가 실행되었어요!!");
+		
+//		bucketProductsRepository.deleteById(bucket.getProduct().getId());
 	}
 
 }

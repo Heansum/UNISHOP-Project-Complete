@@ -98,7 +98,7 @@ function selectProductDelete(userId) {
 		$('input:checkbox[name="id"]').each(
 			async function checked() {
 				if (this.checked) {
-
+					
 					// 체크 된 것들 each로 각각의 value 값을 던져주게 만든다
 
 					// alert는 확인용!
@@ -123,7 +123,11 @@ function selectProductDelete(userId) {
 				}
 
 			});
-		location.href = "/bucket/" + userId;
+			console.log ("userId 나오나요? : "+ userId);
+			if(userId != null){
+				console.log("네 나옵니다!!" + userId);
+			}
+//		location.href = "/bucket/" + userId;
 
 	} else {
 		return;

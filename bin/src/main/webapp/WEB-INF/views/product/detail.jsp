@@ -51,7 +51,7 @@
 							<div class="button-wrap">
 								<button class="w-100 btn btn-lg btn-primary" type="submit"
 									style="background-color: #f5f5f5; border: #f8f9fa; color: #383838;"
-									onclick="inputBucket('${principal.id}','${productEntity.productname}','${productEntity.image}','${productEntity.size}','${productEntity.price}')">Input
+									onclick="inputBucket('${productEntity.id}','${principal.id}','${productEntity.productname}','${productEntity.image}','${productEntity.size}','${productEntity.price}')">Input
 									bucket</button>
 							</div>
 						</div>

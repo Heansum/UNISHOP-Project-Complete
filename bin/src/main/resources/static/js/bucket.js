@@ -46,11 +46,12 @@ function buy() {
 		}
 		// end buy 함수
 
-async function inputBucket(userId, productname, image, size, price) {
+async function inputBucket(productId, userId, productname, image, size, price) {
 
 	console.log("나실행됨?");
 
 	let postDto = {
+		id: productId,
 		productname: productname,
 		image: image,
 		size: size,

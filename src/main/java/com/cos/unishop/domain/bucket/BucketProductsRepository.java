@@ -13,10 +13,13 @@ public interface BucketProductsRepository extends JpaRepository<BucketProducts, 
 	@Query(value = "SELECT * FROM bucket_products WHERE user_id = :id", nativeQuery = true)
 	List<BucketProducts> mFindAllByUserId(int id);
 	
-	@Query(value = "SELECT productname FROM product WHERE id = (SELECT product_id FROM bucket_products WHERE user_id = :id)", nativeQuery = true)
-	List<String> mFindByUserId(int id);
+	@Query(value = "SELECT product_id FROM bucket_products WHERE user_id = :id", nativeQuery = true)
+	List<Integer> mFindProductIdByUserId(int id);
 	// UserId, 
 	
 	@Query(value = "SELECT product_id FROM bucket_products WHERE user_id = :id", nativeQuery = true)
-	int testByUserId(int id);
+	List<Integer> testByUserId(int id);
+	
+	@Query(value = "DELETE FROM bucket_products WHERE product_id = :id AND user_id = :userId", nativeQuery = true)
+	void mDeleteBucketProductsIdByProductId(int id, int userId);
 }

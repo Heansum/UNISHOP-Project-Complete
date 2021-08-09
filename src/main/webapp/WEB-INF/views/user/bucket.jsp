@@ -168,7 +168,7 @@
 								</td>
 								<td>
 									<div class="info-align-box">
-										<button type="button" class="btn btn-danger" onclick = "selectProductDelete()">삭제</button>
+										<button type="button" class="btn btn-danger" onclick = "selectProductDelete(${principal.id})">삭제</button>
 									</div>
 								</td>
 
