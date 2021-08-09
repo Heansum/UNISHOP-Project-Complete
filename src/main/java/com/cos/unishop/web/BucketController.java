@@ -166,23 +166,24 @@ public class BucketController {
 
 	// 장바구니에서 물건 지우는 컨트롤러
 	@DeleteMapping("/bucket/delete")
-	public @ResponseBody void bucketProductDeleteById(@RequestBody Product product) {
-		// 받는 값은 productId 값이다 
+	public @ResponseBody void bucketProductDeleteById(@RequestBody BucketProducts bucket) {
+		// 받는 값은 bucketId 값이다 
+		// 여기서 보면 들어가는 건 Id 값이다!
+		// 즉 다른 부분은 bucket에 아무것도 저장되어 있지 않다
+		// 그래서 bucket을 만들어 주자
+		BucketProducts bucketProducts = new BucketProducts();
 		
-		User user = (User) session.getAttribute("principal");
+		// bucketProductsRepository에서 가져와서
+		// 위에서 만든 껍데기에 넣어줍니다
+		bucketProducts = bucketProductsRepository.getById(bucket.getId());
+		System.out.println("productId :"+bucketProducts.getProduct().getId());
+		System.out.println("userId : "+bucketProducts.getUser().getId());
 		
-		BucketProducts bucket = new BucketProducts();
-		// productId
-		System.out.println("productId 입니다! : "+product.getId());
-		// UserId
-		System.out.println("userId 입니다! : "+user.getId());
-		
-		// Bucket의 Id를 가져온다 
-		
-		bucketProductsRepository.mDeleteBucketProductsIdByProductId(product.getId(), user.getId());
+		// 이렇게 지정해준 것은 아래에서 쓰이게 됩니다.
+		bucketProductsRepository.mDeleteBucketProductsIdByProductId(bucketProducts.getProduct().getId(), bucketProducts.getUser().getId());
 		System.out.println("DELETE가 실행되었어요!!");
 		
-//		bucketProductsRepository.deleteById(bucket.getProduct().getId());
+		
 	}
 
 }

@@ -72,7 +72,7 @@ async function inputBucket(productId, userId, productname, image, size, price) {
 
 	if (parseResponse === "ok") {
 
-		if (confirm("선택한 상품이 장바구니에 담겼습니다, 장바구니로 가시겠습니까?") == true) {
+		if (confirm("선택한 상품이 장바구니에 담겼습니다, 장바구니로 이동하시겠습니까?") == true) {
 			location.href = "/bucket/" + userId;
 
 		} else {
@@ -94,7 +94,7 @@ async function inputBucket(productId, userId, productname, image, size, price) {
 
 function selectProductDelete(userId) {
 
-	if (confirm("정말 선택하신 물품을 장바구니에서 삭제 하시겠습니까?") == true) {
+	if (confirm("선택하신 상품을 삭제 하시겠습니까?") == true) {
 		$('input:checkbox[name="id"]').each(
 			async function checked() {
 				if (this.checked) {
@@ -127,8 +127,8 @@ function selectProductDelete(userId) {
 			if(userId != null){
 				console.log("네 나옵니다!!" + userId);
 			}
-//		location.href = "/bucket/" + userId;
-
+		location.href = "/bucket/" + userId;
+		alert("상품이 삭제되었습니다.");
 	} else {
 		return;
 	}
