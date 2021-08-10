@@ -194,7 +194,7 @@
 							</label>
 						</div>
 						<button type="button" class="btn btn-danger" onclick = "selectProductDelete(${principal.id})">삭제</button>
-						<button type="button" class="btn btn-success" onclick="buy(${bucketProductEntity.id})">주문하기</button>
+						<button type="button" class="btn btn-success" onclick="buy(${principal.id})">주문하기</button>
 					</div>
 
 				</div>

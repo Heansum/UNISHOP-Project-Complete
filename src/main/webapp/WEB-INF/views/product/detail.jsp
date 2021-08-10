@@ -46,7 +46,7 @@
 							<div class="button-wrap">
 								<button class="w-100 btn btn-lg btn-primary" type="submit"
 									style="background-color: #f5f5f5; border: #f8f9fa; color: #383838;"
-									onclick="goPayment('${productEntity.id}')">Buy</button>
+									onclick="goPayment('${productEntity.id}','${principal.id}')">Buy</button>
 							</div>
 							<div class="button-wrap">
 								<button class="w-100 btn btn-lg btn-primary" type="submit"
@@ -268,15 +268,10 @@
 
 <script>
 	function goLoginCheck() {
-		alert("로그인하셔야 들어갈수 있는 페이지입니다.");
+// 		alert("로그인하셔야 들어갈수 있는 페이지입니다.");
 		location.href = "/auth/loginForm";
 	}
 
-	function goPayment(id) {
-		alert("결제화면으로 이동하시겠습니까?");
-		console.log(id)
-		location.href = "/product/payment/" + id;
-	}
 </script>
 <script src="/js/bucket.js"></script>
 <%@ include file="../layout/footer.jsp"%>

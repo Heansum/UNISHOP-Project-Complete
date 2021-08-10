@@ -22,4 +22,8 @@ public interface BucketProductsRepository extends JpaRepository<BucketProducts, 
 	
 	@Query(value = "DELETE FROM bucket_products WHERE product_id = :id AND user_id = :userId", nativeQuery = true)
 	void mDeleteBucketProductsIdByProductId(int id, int userId);
+	
+	@Query(value = "SELECT id FROM bucket_products WHERE product_id = :productId AND user_id = :userId ", nativeQuery = true)
+	int mFindBucketProductsIdByProductIdAndUserId(int productId, int userId);
+	
 }

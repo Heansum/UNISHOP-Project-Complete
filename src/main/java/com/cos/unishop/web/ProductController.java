@@ -56,13 +56,13 @@ public class ProductController {
 	    }
 	    
 	    //결제화면으로 이동하는 컨트롤러
-	    @GetMapping("product/payment/{id}")
-	    public String paymentPage(@PathVariable int id, Model model) {
-	    	Product productEntity = productRepository.findById(id).get();
-	    	model.addAttribute("productEntity", productEntity);
-	    	
-	    	return "product/payment";
-	    }
+//	    @GetMapping("product/payment/{id}")
+//	    public String paymentPage(@PathVariable int id, Model model) {
+//	    	Product productEntity = productRepository.findById(id).get();
+//	    	model.addAttribute("productEntity", productEntity);
+//	    	
+//	    	return "product/payment";
+//	    }
 	    
 	
 	    

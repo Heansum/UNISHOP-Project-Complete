@@ -147,6 +147,15 @@ public class BucketController {
 	public @ResponseBody void bucketSaveToPayment(@RequestBody BucketProducts bucket) {
 		System.out.println(bucket.getId() + ": 번째 물건 넘겨주기 시작!");
 		// 여기에 받은 ID를 가지고 bucketProductsRepository에 접근!
+		
+		BucketProducts bucketProducts = new BucketProducts();
+		Product product = new Product();
+		
+		bucketProducts = bucketProductsRepository.getById(bucket.getId());
+		
+		// 그리고 여기에 맵핑되어있는 productId를 가지고온다
+		
+		
 		// 그리고 그 데이터를 가져와서
 		// payment 데이터로 넘겨준다!
 		// 즉 데이터를 넘겨주는 컨트롤러!
@@ -185,5 +194,28 @@ public class BucketController {
 		
 		
 	}
+	
+	// 디테일에서 결제하기를 누르고 저장이 된 상태에 bucketId 리턴
+	// 가지고 오는 id값은 productId입니다
+	@GetMapping("/bucket/id/{id}")
+	public @ResponseBody int getBucketId(@PathVariable int id){
+		User user = (User) session.getAttribute("principal");
+		System.out.println("/bucket/id 때려지나요?");
+		// 유저가 사려는 물품
+//		Product product = new Product();
+//		product = productRepository.getById(productId);
+		
+		
+		// 유저 id
+		int userId = user.getId();
+		int bucketProductId = bucketProductsRepository.mFindBucketProductsIdByProductIdAndUserId(id, userId);
+		System.out.println("버킷프로덕트ID입니다"+bucketProductId);
+		// user의 정보와 product id 정보가 있으면 
+		// bucket의 id를 찾아낼 수 있다.
+		// native query를 짜자
+		// bucket에서 들고오는 거라서 bucketProductsRepository에서 짜자
+		return bucketProductId;
+	}
+	
 
 }

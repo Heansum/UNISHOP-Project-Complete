@@ -27,7 +27,6 @@
 
 		
 		function goPayment(){
-			alert("결제화면으로 이동하시겠습니까?");
 			location.href = "/product/payment/${postEntity.id}";
 		}
 		
