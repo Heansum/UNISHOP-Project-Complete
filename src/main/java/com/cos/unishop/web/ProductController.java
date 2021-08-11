@@ -35,11 +35,11 @@ public class ProductController {
 	    }
 	    
 	    //상품 페이지로 이동하는 컨트롤러
-	    @GetMapping("/product/productPage")
-	    public String productPage(Model model) {
+	    @GetMapping("/product/productPage/{category}")
+	    public String productPage(@PathVariable String category, Model model) {
+	    	List<Product> productEntity = productRepository.mFindProductsByProductCategory(category);
 	    	
-	    	
-	    	model.addAttribute("productsEntity", productRepository.findAll());
+	    	model.addAttribute("productsEntity", productEntity);
 	    	return "product/productPage";
 	    }
 	    

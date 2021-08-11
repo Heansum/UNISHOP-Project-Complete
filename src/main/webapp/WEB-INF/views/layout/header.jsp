@@ -75,21 +75,21 @@
 										<ul class="dropdown-menu">
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">상의</span></li>
-												<li><a class="dropdown-item" href="/product/productPage">셔츠</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">반팔</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">원피스</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_shirts">셔츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_shortsleeve">반팔</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_onepiece">원피스</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">하의</span></li>
-												<li><a class="dropdown-item" href="/product/productPage">청바지</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">치마</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">와일드팬츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_jeans">청바지</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_skirt">치마</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_widepants">와일드팬츠</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">아우터</span></li>
-												<li><a class="dropdown-item" href="/product/productPage">가디건</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">트렌치코트</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">코트</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_cardigan">가디건</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_trenchcoat">트렌치코트</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_coat">코트</a></li>
 											</div>
 											<div class="dropdown-in">
 												<button type="button" class="btn-close" aria-label="Close"></button>
@@ -103,21 +103,21 @@
 										<ul class="dropdown-menu">
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">상의</span></li>
-												<li><a class="dropdown-item" href="/product/productPage">셔츠</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">반팔</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">긴팔</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_shirts">셔츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_shortsleeve">반팔</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_longsleeves">긴팔</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">하의</span></li>
-												<li><a class="dropdown-item" href="/product/productPage">청바지</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">슬랙스</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">와일드팬츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_jeans">청바지</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_slacks">슬랙스</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_widepants">와일드팬츠</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">아우터</span></li>
-												<li><a class="dropdown-item" href="/product/productPage">가디건</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">트렌치코트</a></li>
-												<li><a class="dropdown-item" href="/product/productPage">코트</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_cardigan">가디건</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_trenchcoat">트렌치코트</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_coat">코트</a></li>
 											</div>
 											<div class="dropdown-in">
 												<button type="button" class="btn-close" aria-label="Close"></button>
