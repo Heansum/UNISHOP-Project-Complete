@@ -5,13 +5,47 @@
 
 <!-- 간판입니다 -->
 
-
+<c:set var="category" scope="session" value="${categoryEntity}"/>
 
 <!-- 총 18개 반복 -->
-<c:forEach var="product" items="${productsEntity}">
+
+<!-- 여자  -->
+	<!-- 상의 -->
+		<!--  셔츠 -->
+		<!-- 긴팔 -->
+		<!-- 	원피스 -->
+		
+	<!-- 	하의 -->
+		<!-- 	청바지 -->
+		<!--  치마 -->
+		<!-- 와이드팬츠 -->
+		
+	<!-- 	아우터 -->
+		<!-- 	가디건 -->
+		<!-- 	트렌치 코트 -->
+		<!-- 	코드 -->
+		
+<!-- 남자  -->
+	<!-- 상의 -->
+		<!--  셔츠 -->
+		<!-- 긴팔 -->
+		<!-- 	원피스 -->
+		
+	<!-- 	하의 -->
+		<!-- 	청바지 -->
+		<!--  치마 -->
+		<!-- 와이드팬츠 -->
+		
+	<!-- 	아우터 -->
+		<!-- 	가디건 -->
+		<!-- 	트렌치 코트 -->
+		<!-- 	코드 -->		
+		
+		
+		
 <c:choose>
 
-	<c:when test="${product.category eq 'w_onepiece'}">
+	<c:when test="${category == 'w_shirts'}">
 		<div class="main-top-information">
 		
 		
@@ -19,7 +53,114 @@
 			
 				<div class="top-width">
 				
-					<h2>ONEPIECE</h2>
+					<h2>Shirts</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1515734674582-29010bb37906?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Beautiful Women Shirts</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'w_shortsleeve'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Shortsleeve</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1500336624523-d727130c3328?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Beautiful Women Shortsleeve</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'w_onepiece'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Onepiece</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Beautiful Women Onepiece</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'w_jeans'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Jeans</h2>
+					<h4>"If you wear a short enough skirt, the party will come to
+						you." -Dorothy Parker</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1527628217451-b2414a1ee733?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+				</div>
+			</div>
+			
+		
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Beautiful Women Jeans</h3>
+		</div>
+		</c:when>
+
+	<c:when test="${category == 'w_skirt'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Skirt</h2>
 					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
 				
 				</div>
@@ -29,56 +170,377 @@
 						src="https://images.unsplash.com/photo-1564246614931-1be8ad768e63?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80">
 				</div>
 			</div>
-			
-		
 		</div>
-	
-	
-	
-	</c:when>
-	</c:choose>
-</c:forEach>
-
-
-<%-- <c:choose> --%>
-<%-- 	<c:when test="${productsEntity.category} eq w_skirt"> --%>
-<!-- 		<div class="main-top-information"> -->
 		
-		
-<!-- 			<div class="new-main"> -->
-			
-<!-- 				<div class="top-width"> -->
-				
-<!-- 					<h2>SKIRTS</h2> -->
-<!-- 					<h4>"If you wear a short enough skirt, the party will come to -->
-<!-- 						you." -Dorothy Parker</h4> -->
-				
-<!-- 				</div> -->
-<!-- 				<div></div> -->
-<!-- 				<div class="content-img-top"> -->
-<!-- 					<img -->
-<!-- 						src="https://images.unsplash.com/photo-1564246614931-1be8ad768e63?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-			
-		
-<!-- 		</div> -->
-	
-	
-	
-<%-- 	</c:when> --%>
-
-	
-	
-	 
-<%-- </c:choose> --%>
-	<!--Main-content-->
 		<div class="main-content-product">
 		<div class="new-main">
-			<h3>Beatiful Women Skirts</h3>
+			<h3>Beautiful Women Skirts</h3>
 		</div>
+	</c:when>
+
+	<c:when test="${category == 'w_widepants'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Widepants</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1580651214613-f4692d6d138f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Beautiful Women Widepants</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'w_cardigan'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Cardigan</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1475048975523-705992b13a68?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Beautiful Women Cardigan</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'w_trenchcoat'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Trenchcoat</h2>
+					<h4>"If you wear a short enough skirt, the party will come to
+						you." -Dorothy Parker</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1608113378058-552d2829d450?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+				</div>
+			</div>
+			
+		
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Beautiful Women Trenchcoat</h3>
+		</div>
+		</c:when>	
+
+		<c:when test="${category == 'w_coat'}">
+			<div class="main-top-information">
+			
+			
+				<div class="new-main">
+				
+					<div class="top-width">
+					
+						<h2>Coat</h2>
+						<h4>"If you wear a short enough skirt, the party will come to
+							you." -Dorothy Parker</h4>
+					
+					</div>
+					<div></div>
+					<div class="content-img-top">
+						<img
+							src="https://images.unsplash.com/photo-1574108233109-fc429c0488fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80">
+					</div>
+				</div>
+				
+			
+			</div>
+			
+			<div class="main-content-product">
+			<div class="new-main">
+				<h3>Beautiful Women Coats</h3>
+			</div>
+		</c:when>			
+		
+
+
+
+	<c:when test="${category == 'm_shirts'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Shirts</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1617196701537-7329482cc9fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Cool man Shirts</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'm_shortsleeve'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Shortsleeve</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1601917993872-16fc37c1f872?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Cool man Shortsleeve</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'm_longsleeves'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Longsleeves</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1599847022902-f64cc1ae97fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Cool man Longsleeves</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'm_jeans'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Jeans</h2>
+					<h4>"If you wear a short enough skirt, the party will come to
+						you." -Dorothy Parker</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1510867759970-3d2ca293be77?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+				</div>
+			</div>
+			
+		
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Cool man Jeans</h3>
+		</div>
+		</c:when>
+
+	<c:when test="${category == 'm_slacks'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Slacks</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1615800012383-6420b0da1fb4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=678&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Cool man Skirts</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'm_widepants'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Widepants</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1624571032416-f86c480bf2b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Cool man Widepants</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'm_cardigan'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Cardigan</h2>
+					<h4>"Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live." —Gianni Versace</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1599577180361-d8a326bafca3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80">
+				</div>
+			</div>
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Cool man Cardigan</h3>
+		</div>
+	</c:when>
+
+	<c:when test="${category == 'm_trenchcoat'}">
+		<div class="main-top-information">
+		
+		
+			<div class="new-main">
+			
+				<div class="top-width">
+				
+					<h2>Trenchcoat</h2>
+					<h4>"If you wear a short enough skirt, the party will come to
+						you." -Dorothy Parker</h4>
+				
+				</div>
+				<div></div>
+				<div class="content-img-top">
+					<img
+						src="https://images.unsplash.com/photo-1617525104975-5043e63c8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+				</div>
+			</div>
+			
+		
+		</div>
+		
+		<div class="main-content-product">
+		<div class="new-main">
+			<h3>Beautiful Women Trenchcoat</h3>
+		</div>
+		</c:when>	
+
+		<c:when test="${category == 'm_coat'}">
+			<div class="main-top-information">
+			
+			
+				<div class="new-main">
+				
+					<div class="top-width">
+					
+						<h2>Coat</h2>
+						<h4>"If you wear a short enough skirt, the party will come to
+							you." -Dorothy Parker</h4>
+					
+					</div>
+					<div></div>
+					<div class="content-img-top">
+						<img
+							src="https://images.unsplash.com/photo-1617525104975-5043e63c8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+					</div>
+				</div>
+				
+			
+			</div>
+			
+			<div class="main-content-product">
+			<div class="new-main">
+				<h3>Cool man Coats</h3>
+			</div>
+		</c:when>			
+		
 	
-	
+		
+		
+</c:choose>
+
+
+	<!--Main-content-->
 
 
 	<div class="new-main-products">

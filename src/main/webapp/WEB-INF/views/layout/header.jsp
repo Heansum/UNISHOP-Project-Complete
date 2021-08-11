@@ -83,7 +83,7 @@
 												<li><span class="dropdown-item-text">하의</span></li>
 												<li><a class="dropdown-item" href="/product/productPage/w_jeans">청바지</a></li>
 												<li><a class="dropdown-item" href="/product/productPage/w_skirt">치마</a></li>
-												<li><a class="dropdown-item" href="/product/productPage/w_widepants">와일드팬츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/w_widepants">와이드팬츠</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">아우터</span></li>
@@ -111,7 +111,7 @@
 												<li><span class="dropdown-item-text">하의</span></li>
 												<li><a class="dropdown-item" href="/product/productPage/m_jeans">청바지</a></li>
 												<li><a class="dropdown-item" href="/product/productPage/m_slacks">슬랙스</a></li>
-												<li><a class="dropdown-item" href="/product/productPage/m_widepants">와일드팬츠</a></li>
+												<li><a class="dropdown-item" href="/product/productPage/m_widepants">와이드팬츠</a></li>
 											</div>
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">아우터</span></li>

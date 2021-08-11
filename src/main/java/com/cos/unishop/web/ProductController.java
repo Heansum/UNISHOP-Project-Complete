@@ -39,6 +39,8 @@ public class ProductController {
 	    public String productPage(@PathVariable String category, Model model) {
 	    	List<Product> productEntity = productRepository.mFindProductsByProductCategory(category);
 	    	
+	    	
+	    	model.addAttribute("categoryEntity",category);
 	    	model.addAttribute("productsEntity", productEntity);
 	    	return "product/productPage";
 	    }
