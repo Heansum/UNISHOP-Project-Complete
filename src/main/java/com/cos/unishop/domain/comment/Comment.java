@@ -43,4 +43,13 @@ public class Comment {
 	private Product product;
 
 
+	@Override
+	public String toString() {
+		return "Comment [id=" + id + ", registrationtime=" + registrationtime + ", productcs=" + productcs + ", score="
+				+ score + ", sizecs=" + sizecs + ", colorcs=" + colorcs + ", image=" + image + ", user=" + user
+				+ ", product=" + product + "]";
+	}
+
+	
+
 }
