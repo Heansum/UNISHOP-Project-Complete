@@ -99,7 +99,7 @@
 									<li class="nav-item dropdown"><a
 										class="nav-link dropdown-toggle" href="#"
 										id="navbarDropdownMenuLink" role="button"
-										data-bs-toggle="dropdown" aria-expanded="false"> Man </a>
+										data-bs-toggle="dropdown" aria-expanded="false"> Men </a>
 										<ul class="dropdown-menu">
 											<div class="dropdown-in">
 												<li><span class="dropdown-item-text">상의</span></li>
