@@ -62,9 +62,9 @@
 					<div class="collapse" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
-							<li><a href="/user/Certified" class="link-dark rounded">회원 정보 수정
+							<li><a href="/userUpdate" class="link-dark rounded">회원 정보 수정
 									</a></li>
-							<li><a href="/userDeleteForm" class="link-dark rounded">회원 탈퇴</a></li>
+							<li><a href="#" class="link-dark rounded">회원 탈퇴</a></li>
 							<li><a href="#" class="link-dark rounded">로그아웃</a></li>
 						</ul>
 					</div>
@@ -77,15 +77,17 @@
 	<!--메인 section-->
 	<section class="mypage-section">
 		<div>
-			<h2>Overview</h2>
+			<h2>회원 정보 수정</h2>
 		</div>
 
 		<hr />
-
-
+		<button onclick="goUserDelete(${principal.id})">회원 탈퇴</button>
+		<h1>탈퇴하면 내랑 볼 생각 하지마라 ㅇㅋ?</h1>
 
 	</section>
 
 </main>
+
+<script src="/js/userUpdate.js"></script>
 
 <%@ include file="../layout/footer.jsp"%>
