@@ -70,7 +70,7 @@
 	<!--side bar End-->
 
 	<!--컨텐츠 영역 section-->
-	<section class="section">
+	<section class="section" style="flex: 4;">
 		<div>
 			<h2>Comments management</h2>
 			<!-- <hr/> -->

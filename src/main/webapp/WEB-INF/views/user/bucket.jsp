@@ -53,11 +53,11 @@
 
 		<!-- 장바구니 탭 글자들 -->
 		<!-- DB에서 가져와서 던져줌 -->
-		<table class="tab-text">
+		<%-- <table class="tab-text">
 			<thead>
 				<td class="line-bucket"></td>
 			</thead>
-		</table>
+		</table> --%>
 
 		<div>
 			<!-- <h4>내가 쓴 상품평</4> -->
@@ -71,11 +71,21 @@
 
 				<!-- 장바구니 테이블 -->
 				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col"></th>
+							<th class="th-align" scope="col">상품명</th>
+							<th scope="col">사이즈</th>
+							<th scope="col">판매가</th>
+							<th scope="col">삭제</th>
+
+						</tr>
+					</thead>
 					<tbody>
 					
 						<c:forEach var="bucketProduct" items="${bucketProductsEntity}">
 						<!-- 한줄 시작 -->
-						<tr class="">
+						<tr>
 							<!-- th, for문으로 돌립니다 -->
 							<!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
 							<th scope="row">
@@ -111,10 +121,10 @@
 										<!-- 여기에 사이즈 EL 표현식 -->
 									</div>
 									<!-- 상품 페이지 버튼 -->
-									<div class="product-button">
+									<%-- <div class="product-button">
 										<button type="button" class="btn btn-light"
 											style="margin-left: 40px;" href="#">상품 페이지</button>
-									</div>
+									</div> --%>
 								</div>
 
 							</td>
