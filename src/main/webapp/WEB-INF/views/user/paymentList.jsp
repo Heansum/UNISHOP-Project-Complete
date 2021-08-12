@@ -137,7 +137,7 @@
                 <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
                 <th scope="row">
                   <!-- 여기에 EL로 구매일자 넣습니다 -->
-
+					${buy.paymenttime}
                   <!-- 체크박스 -->
                   <!-- <div class="info-align-box">
                     <div class="form-check">
@@ -153,15 +153,15 @@
                 <!-- 상품정보 -->
                 <!-- 여기에서 상품 이름을 클릭하면 그 상품에 해당하는 detail을 뿌리는 기능 추가 -->
                 <td>
-                  <div class="product-info-box">
+                  <div class="product-info-box" >
                     <div class="minibox-img">
                       <!-- 이미지 -->
                       <img id="img1" src="/upload/${buy.product.image}" class="rounded float" alt="...">
                     </div>
 
                     <!-- 제품 이름 -->
-                    <div class="product-inforamtion" style="font-weight: 800;">
-                      ${buy.product.productname}
+                    <div class="product-inforamtion" style="font-weight: 800;" >
+                      <a href="/product/${buy.product.id}">${buy.product.productname}</a>
                     </div>
 
                     <!-- 사이즈 추가 -->

@@ -15,6 +15,7 @@ public class SessionInterceptor implements HandlerInterceptor {
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("adminprincipal") == null) {
+			
 			response.sendRedirect("/");
 			return false;
 		}

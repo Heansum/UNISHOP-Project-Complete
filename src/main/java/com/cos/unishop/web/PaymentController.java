@@ -1,5 +1,8 @@
 package com.cos.unishop.web;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -14,6 +17,7 @@ import com.cos.unishop.domain.bucket.BucketProducts;
 import com.cos.unishop.domain.bucket.BucketProductsRepository;
 import com.cos.unishop.domain.buy.Buy;
 import com.cos.unishop.domain.buy.BuyRepository;
+import com.cos.unishop.domain.comment.Comment;
 import com.cos.unishop.domain.payment.PayMentRepository;
 import com.cos.unishop.domain.payment.Payment;
 import com.cos.unishop.domain.product.Product;
@@ -46,6 +50,10 @@ public class PaymentController {
     	BucketProducts bucket = bucketProductsRepository.getById(id);
     	int productId = bucket.getProduct().getId();
     	Product productEntity = productRepository.findById(productId).get();
+    	
+    	
+    	
+    	
     	model.addAttribute("productEntity", productEntity);
     	
     	// 장바구니에 담은 것을 보여주게 합니다.
@@ -63,6 +71,17 @@ public class PaymentController {
 		User principal =(User) session.getAttribute("principal");
 		
 		Buy buy = new Buy();
+		//구매일자
+		
+		SimpleDateFormat format2 = new SimpleDateFormat ( "yyyy년 MM월dd일 HH시mm분ss초");
+		Date time = new Date();
+				
+		String time1 = format2.format(time);
+		buy.setPaymenttime(time1);			
+		System.out.println(time1);
+		
+		System.out.println("등록 시간 저장완료");
+		
 		
 		payment.setUser(principal);
 		System.out.println("유저저장완료");
@@ -73,6 +92,7 @@ public class PaymentController {
 		System.out.println("구매 저장시작");
 		buy.setProduct(product);
 		buy.setUser(principal);
+		
 		buyRepository.save(buy);
 		System.out.println("구매저장완료");
 		paymentRepository.save(payment);
