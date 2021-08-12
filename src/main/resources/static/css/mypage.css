@@ -150,5 +150,5 @@ hr {
   flex-direction: column;
 }
 #width-max {
-  width: 100%;
+  align-self: center;
 }

@@ -68,7 +68,7 @@
 	<!--side bar End-->
 
 	<!--메인 section-->
-	<section class="mypage-section">
+	<section class="mypage-section" style="flex: 4;">
 		<div>
 			<h2>Overview</h2>
 		</div>

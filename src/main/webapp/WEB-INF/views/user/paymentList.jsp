@@ -62,7 +62,7 @@
           </ul>
         </div>
         <!--컨텐츠 영역 section-->
-      <section class="section">
+      <section class="section" style="flex: 4;">
         <div>
           <h2>Payment list</h2>
           <!-- <hr/> -->
@@ -96,7 +96,7 @@
                 <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
                 <th scope="row">
                   <!-- 여기에 EL로 구매일자 넣습니다 -->
-
+                  ${buy.paymenttime}
                   <!-- 체크박스 -->
                   <!-- <div class="info-align-box">
                     <div class="form-check">
@@ -112,15 +112,15 @@
                 <!-- 상품정보 -->
                 <!-- 여기에서 상품 이름을 클릭하면 그 상품에 해당하는 detail을 뿌리는 기능 추가 -->
                 <td>
-                  <div class="product-info-box">
+                  <div class="product-info-box" >
                     <div class="minibox-img">
                       <!-- 이미지 -->
                       <img id="img1" src="/upload/${buy.product.image}" class="rounded float" alt="...">
                     </div>
 
                     <!-- 제품 이름 -->
-                    <div class="product-inforamtion" style="font-weight: bold;">
-                      ${buy.product.productname}
+                    <div class="product-inforamtion" style="font-weight: 800;" >
+                      <a href="/product/${buy.product.id}">${buy.product.productname}</a>
                     </div>
 
                     <!-- 사이즈 추가 -->
@@ -144,40 +144,16 @@
                   <td>
                     <div class="info-align-box">
                       <!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
-                     ${buy.product.price}
+                     ${buy.product.price}$
                     </div>
                   </td>
-                  <!-- 수량 -->
-                  <!-- 수량 컴포넌트 추가 -->
-                  <td>
-                    <div class="info-align-box">
-                      
-                        <!-- 여기에 수량 박스 추가 -->
-                        <div>
-                          <input class="num-wrap" value="2" readonly>
-                        </div>
-                        
-                        <!-- <div class="up-and-down">
-                          <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
-                          <img src="https://img.icons8.com/material-outlined/24/000000/down--v1.png"/>
-                        </div> -->
-                      
-                    </div>
-                  </td>
-                  <!-- 합계 -->
-                  <!-- 계산되어서 되는 합계 추가 -->
-                  <td>
-                    <div class="info-align-box">
-                      <div>
-                        <input class="all-count" value="47.98$" readonly>
-                      </div>
-                      
-                    </div>
-                  </td>
+                  
+                  
                   <!-- <td>
                     <div class="info-align-box">
                       <button type="button" class="btn btn-danger">
                         삭제
+
                       </button>
                     </div>
                   </td> -->
