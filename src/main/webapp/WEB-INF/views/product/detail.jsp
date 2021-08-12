@@ -18,11 +18,10 @@
 			<!-- 상품 이미지 -->
 			<section class="product-img">
 
-				<img id="img1" src="/upload/${productEntity.image}"
-					class="rounded float" alt="...">
+				<img id="product-img-main" src="/upload/${productEntity.image}"
+					class="product-img-main float" alt="...">
 
 			</section>
-
 
 			<section>
 
@@ -46,12 +45,12 @@
 							<div class="button-wrap">
 								<button class="w-100 btn btn-lg btn-primary" type="submit"
 									style="background-color: #f5f5f5; border: #f8f9fa; color: #383838;"
-									onclick="goPayment('${productEntity.id}','${principal.id}')">Buy</button>
+									onclick="goPayment('${productEntity.id}')">Buy</button>
 							</div>
 							<div class="button-wrap">
 								<button class="w-100 btn btn-lg btn-primary" type="submit"
 									style="background-color: #f5f5f5; border: #f8f9fa; color: #383838;"
-									onclick="inputBucket('${productEntity.id}','${principal.id}','${productEntity.productname}','${productEntity.image}','${productEntity.size}','${productEntity.price}')">Input
+									onclick="inputBucket('${principal.id}','${productEntity.productname}','${productEntity.image}','${productEntity.size}','${productEntity.price}')">Input
 									bucket</button>
 							</div>
 						</div>
@@ -65,16 +64,16 @@
 
 		<!-- 고객 상품평 -->
 		<section class="member-comments-box">
+			<button type="button" class="pyong-btn" data-bs-toggle="modal"
+					data-bs-target="#exampleModal">
+					상품평 쓰기</button>
 			<!-- 모달 사용해서 상품평 바로 테이블에 넣기 -->
 			<!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
 
 			<!-- 상품평 쓰기 -->
 			<div class="input-comments">
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-					data-bs-target="#exampleModal"
-					style="background-color: #f5f5f5; border: #f8f9fa; color: #383838;">
-					상품평 쓰기</button>
+				
 
 				<!-- Modal -->
 				<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -88,7 +87,7 @@
 							</div>
 							<div class="modal-body">
 								<!-- 			모달바디 시작 -->
-								<div class="register">
+								<div class="modal-start">
 									<!-- 여기에 폼있어요! -->
 									<form action="/commentSave" method="post"
 										enctype="multipart/form-data">
@@ -96,7 +95,7 @@
 										<div>
 											<div class="input-parent">
 
-												<div class="input-wrap">
+												<div class="input-wrap" style="display: none;">
 													<div class="input-group mb-3">
 														<span class="input-group-text"
 															id="inputGroup-sizing-default"></span> <input
@@ -110,17 +109,17 @@
 											</div>
 										</div>
 
-										<div class="input-parent">
-											<h4>상품 이름</h4>
-											<div class="input-wrap">
-												<div class="input-group mb-3">
+										<div class="modal-flex">
+											
+												
+											
+											<section class="modal-img1">
+
+												<img id="img-modal" src="/upload/${productEntity.image}"
+													class="modal-img" alt="...">
+													<div class="modal-text">
 													${productEntity.productname}</div>
-											</div>
-											<section class="product-img">
-
-												<img id="img1" src="/upload/${productEntity.image}"
-													class="rounded float" alt="...">
-
+												
 
 
 
@@ -147,7 +146,7 @@
 												<div class="input-wrap">
 													<div class="input-group mb-3">
 														<span class="input-group-text"
-															id="inputGroup-sizing-default">Default</span> <input
+															id="inputGroup-sizing-default">별점</span> <input
 															type="text" class="form-control"
 															aria-label="Sizing example input"
 															aria-describedby="inputGroup-sizing-default" name="score">
@@ -237,7 +236,7 @@
 						<c:forEach var="comments" items="${commentsEntity}">
 							<tr>
 								<th scope="row">${comments.id}</th>
-								<td>${comments.image}</td>
+								<td><img id="img1" src="/upload/${comments.image}" class="modal-img float" alt="..."></td>
 								<td>${comments.score}</td>
 								<td>${comments.productcs}</td>
 								<td>${comments.sizecs}</td>
@@ -261,17 +260,25 @@
 						<!--                 <td>21-07-21</td> -->
 						<!--               </tr> -->
 					</tbody>
+					
 				</table>
+				<!-- Button trigger modal -->
+				
 		</section>
 	</div>
 </main>
 
 <script>
 	function goLoginCheck() {
-// 		alert("로그인하셔야 들어갈수 있는 페이지입니다.");
+		alert("로그인하셔야 들어갈수 있는 페이지입니다.");
 		location.href = "/auth/loginForm";
 	}
 
+	function goPayment(id) {
+		alert("결제화면으로 이동하시겠습니까?");
+		console.log(id)
+		location.href = "/product/payment/" + id;
+	}
 </script>
 <script src="/js/bucket.js"></script>
 <%@ include file="../layout/footer.jsp"%>

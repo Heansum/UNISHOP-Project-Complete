@@ -16,15 +16,12 @@
 			<ul class="list-unstyled ps-0">
 				<li class="mb-1">
 					<button class="btn btn-toggle align-items-center rounded collapsed"
-						data-bs-toggle="collapse" data-bs-target="#home-collapse"
-						aria-expanded="true">Service Information</button>
+						data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">서비스 정보</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/CommentsManagement" class="link-dark rounded">Comments
-									management</a></li>
-							<li><a href="/bucket/${principal.id}" class="link-dark rounded">Shopping
-									bucket</a></li>
-							<li><a href="/payment/${principal.id}" class="link-dark rounded">Payment list</a></li>
+							<li><a href="/CommentsManagement" class="link-dark rounded">댓글 관리</a></li>
+							<li><a href="/bucket/${principal.id}" class="link-dark rounded">장바구니</a></li>
+							<li><a href="/payment/${principal.id}" class="link-dark rounded">구매 목록</a></li>
 						</ul>
 					</div>
 				</li>
@@ -54,18 +51,14 @@
                 </ul>
               </div>
             </li> -->
-				<li class="border-top my-3"></li>
+			<li class="border-top my-3"></li>
 				<li class="mb-1">
 					<button class="btn btn-toggle align-items-center rounded collapsed"
 						data-bs-toggle="collapse" data-bs-target="#account-collapse"
-						aria-expanded="false">Account</button>
+						aria-expanded="false">계정</button>
 					<div class="collapse" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
-							<li><a href="/CommentsManagement" class="link-dark rounded">Profile
-									modification</a></li>
-							<li><a href="#" class="link-dark rounded">Settings</a></li>
-							<li><a href="#" class="link-dark rounded">Sign out</a></li>
+							<li><a href="#" class="link-dark rounded">로그아웃</a></li>
 						</ul>
 					</div>
 				</li>

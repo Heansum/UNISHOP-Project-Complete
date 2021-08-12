@@ -1,99 +1,148 @@
 /*         어드민, 마이 페이지 hr */
 #hr {
-	width: 1200px;
-	margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 /* 		어드민 섹션 */
 .admin-section {
-	
-	margin-left: 180px;
-	width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 180px;
+  width: 70%;
 }
 
 /* 		여기는 admin main overview 요소입니다 */
-.contents>div>img {
-	display: block;
-	height: 100px;
-	width: 100px;
+.contents > div > img {
+  display: block;
+  height: 100px;
+  width: 100px;
 }
 
 .contents {
-	display: flex;
-	flex-flow: column;
-	width: 70%;
-	align-items: center;
-	width: 150px;
+  display: flex;
+  flex-flow: column;
+  width: 70%;
+  align-items: center;
+  width: 150px;
 }
 
-.contents>hr {
-	display: block;
-	width: 80%;
+.contents > hr {
+  display: block;
+  width: 80%;
 }
 
-.contents>p {
-	display: inline-block;
-	width: auto;
+.contents > p {
+  display: inline-block;
+  width: auto;
 }
 
 /*         어드민에서 오버뷰 밑에 있은 커다란 div입니다 */
 .contents-container {
-	display: inline-block;
-	justify-content: space-between;
-	width: 95%;
-	margin-left: 70px;
+  display: inline-block;
+  justify-content: space-between;
+  width: 95%;
+  margin-left: 70px;
 }
 /*         어드민 메인 페이지의 h2 width입니다 */
-.section>div>#h2 {
-	width: 1200px;
+.section > div > #h2 {
+  width: 1200px;
 }
-
 
 /* 어드민 프로덕트 메인입니다 */
 main {
-	margin-top: 30px;
-	
-/* 	적용도 어짜피 안되서 주석처리했습니다 */
-/* 	height: 1200px; */
-/* 	max-height: 1400px; */
+  margin-top: 30px;
+
+  /* 	적용도 어짜피 안되서 주석처리했습니다 */
+  /* 	height: 1200px; */
+  /* 	max-height: 1400px; */
 }
 
 /* 어드민 등록 페이지입니다 */
 .register {
-	display: flex;
-	width: 600px;
-	height: 600px;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: rgb(194, 194, 194);
+  display: flex;
+  width: 600px;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(194, 194, 194);
 }
 
 .input-wrap {
-	display: flex;
-	flex: 4;
-	width: 400px;
-	margin: 10px;
+  display: flex;
+  flex: 4;
+  width: 400px;
+  margin: 10px;
 }
 
 .input-parent {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-.input-parent>h4 {
-	display: flex;
-	font-size: 16px;
-	flex: 1;
-	justify-content: center;
-	align-items: center;
-	padding-bottom: 6px;
+.input-parent > h4 {
+  display: flex;
+  font-size: 16px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6px;
 }
 
 .sex {
-	display: flex;
-	flex: 1;
-	justify-content: space-between;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
 }
+
+.section-log {
+  margin-left: 180px;
+  width: 70%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 어드민 모달 */
+#modal {
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 500px;
+  z-index: 1;
+  top: 30%;
+  left: 50%;
+}
+
+#modal h2 {
+  margin: 0;
+}
+
+#modal button {
+  display: inline-block;
+  width: 100px;
+  align-self: center;
+}
+
+#modal .modal_content {
+  width: 300px;
+  margin: 100px auto;
+  padding: 0px 5px;
+  background: #fff;
+  border: 2px solid #666;
+}
+
+#modal .modal_layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+/* 어드민 모달 끝 */

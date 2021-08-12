@@ -138,13 +138,14 @@ public class AdminController {
 		buyRepository.deleteById(id);
 	
 	}
-	//상품 관리페이지로 가는 컨트롤러
+	//상품 관리페이지로 가는 컨트롤러 (메인)
 	@GetMapping("/admin/productManagement")
 	public String productManagement(Model model) {
 		model.addAttribute("productsEntity", productRepository.findAll());
 		
 		return"admin/adminProductManagement";
 	}
+	
 	
 	//상품 수정하는 컨트롤러
 	@PutMapping("/admin/productUpdate")

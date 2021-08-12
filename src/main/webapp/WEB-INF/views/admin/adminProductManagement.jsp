@@ -23,7 +23,7 @@
 						aria-expanded="true">상품관리</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/admin/main" class="link-dark rounded">상품
+							<li><a href="/admin/productManagement" class="link-dark rounded">상품
 									수정 / 삭제</a></li>
 							<li><a href="/admin/productRegister"
 								class="link-dark rounded">상품 생성</a></li>

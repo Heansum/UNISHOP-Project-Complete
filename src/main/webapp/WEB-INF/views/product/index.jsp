@@ -64,27 +64,31 @@
 <!--Main-content-->
 <h3>Women</h3>
 <!-- 	여기부터 상품진열시작 -->
-<div class="new-main">
 
-<c:forEach var="products" items="${productsEntity}">
-	<a href="/product/productPage/${products.category}">
-		<div class="index-content-img">
-			<img
-				src="/upload/${products.image}"
-				class="rounded float-start" alt="...">
-
-		</div>
-	</a>
-</c:forEach>	
+<div class="new-main-products">
 	
-	<div class="index-content-img">
-		<img
-			src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"
-			class="rounded float-end" alt="...">
+	<c:forEach var="product" items="${productsEntity}">
+	<c:if test="${product.gender eq 'WOMAN'}">
+		<div class="products">
+			<div class="content-img">
+				
 
-	</div>
+				<a href="/product/productPage">
+					<div class="content-wrap-img">
 
+						<img
+							src="/upload/${product.image}"
+							class="rounded float-start" alt="...">
+					</div>
+				</a>
+			</div>
+		</div>
+		</c:if>
+	</c:forEach>	
+	
 </div>
+
+
 
 <div class="new-main">
 	<div class="index-content-img">
@@ -102,6 +106,31 @@
 </div>
 
 <h3>Man</h3>
+
+<div class="new-main-products">
+	
+	<c:forEach var="product" items="${productsEntity}">
+	<c:if test="${product.gender eq 'MAN'}">
+		<div class="products">
+			<div class="content-img">
+				
+
+				<a href="/product/productPage">
+					<div class="content-wrap-img">
+
+						<img
+							src="/upload/${product.image}"
+							class="rounded float-start" alt="...">
+					</div>
+				</a>
+			</div>
+		</div>
+		</c:if>
+	</c:forEach>	
+
+</div>
+
+
 
 
 <div class="new-main">

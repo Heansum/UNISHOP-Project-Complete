@@ -7,11 +7,6 @@
   justify-content: center;
 }
 
-.sidebars {
-  display: flex;
-  flex: 1;
-}
-
 .contents-container {
   display: flex;
   flex-flow: column;
@@ -63,9 +58,7 @@
 /* 상품정보 미니 박스 입니다 */
 .product-info-box {
   display: flex;
-  width: 400px;
-
-  border: 0px;
+  width: 500px;
   justify-content: center;
   align-items: center;
   margin-left: 50px;
@@ -149,7 +142,6 @@
   justify-content: center;
   align-items: center;
   /* width: 30%; */
-  flex: 3;
   width: 80%;
 }
 

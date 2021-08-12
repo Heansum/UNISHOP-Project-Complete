@@ -3,8 +3,7 @@
 
 <%@ include file="../layout/header.jsp"%>
 
-
-<main>
+<main class="sidebar-main" style="justify-content: flex-start;">
     <!--side bar-->
       <div class="sidebars">
         <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
@@ -15,54 +14,24 @@
           <ul class="list-unstyled ps-0">
             <li class="mb-1">
               <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                Product Management
+                상품 관리
               </button>
               <div class="collapse show" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="/admin/main" class="link-dark rounded">Overview</a></li>
-                  <li><a href="/admin/productRegister" class="link-dark rounded">New</a></li>
-                  <li><a href="#" class="link-dark rounded">Delete</a></li>
-                  <li><a href="#" class="link-dark rounded">Reports</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                Dashboard
-              </button>
-              <div class="collapse" id="dashboard-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">Overview</a></li>
-                  <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                  <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                  <li><a href="#" class="link-dark rounded">Annually</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="mb-1">
-              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                Orders
-              </button>
-              <div class="collapse" id="orders-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">New</a></li>
-                  <li><a href="#" class="link-dark rounded">Processed</a></li>
-                  <li><a href="#" class="link-dark rounded">Shipped</a></li>
-                  <li><a href="#" class="link-dark rounded">Returned</a></li>
+                  <li><a href="/admin/productManagement" class="link-dark rounded">상품 수정 / 삭제</a></li>
+                  <li><a href="/admin/productRegister" class="link-dark rounded">상품 생성</a></li>
+                  <li><a href="/admin/userLog" class="link-dark rounded">회원 로그</a></li>
                 </ul>
               </div>
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
               <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                Account
+                계정
               </button>
               <div class="collapse" id="account-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">New...</a></li>
-                  <li><a href="#" class="link-dark rounded">Profile</a></li>
-                  <li><a href="#" class="link-dark rounded">Settings</a></li>
-                  <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                  <li><a href="/admin/logout" class="link-dark rounded">로그아웃</a></li>
                 </ul>
               </div>
             </li>
@@ -73,7 +42,7 @@
 
     <!--Admin section-->
       
-      <section class="section">
+      <section class="section-log">
         <div>
           <h2>New Orders</h2>
         </div>
@@ -86,23 +55,23 @@
         <br>
         <!-- log 테이블 -->
         <!-- DB에서 가져와서 던져줌 -->
-        <table class="table">
+        <table class="table" style="text-align: center;">
           <thead>
             <tr>
               <th scope="col"></th>
               
               <th scope="col">#</th>
-              <th scope="col">UserId</th>
-              <th scope="col">UserName</th>
-              <th scope="col">Address</th>
-              <th scope="col">order-date-time</th>
+              <th scope="col">유저 아이디</th>
+              <th scope="col">유저 이름</th>
+              <th scope="col">주소</th>
+              <th scope="col">주문 날짜 / 시간</th>
 
               <!-- modal 써서 product 목록 완성 -->
-              <th scope="col">product</th>
+              <th scope="col">주문 상품</th>
             </tr>
           </thead>
           <tbody>
-          	<c:forEach var="buyEntity" items="${buyEntity}">
+            <c:forEach var="buyEntity" items="${buyEntity}">
             <tr>
             
               <th scope="row">
@@ -122,35 +91,33 @@
                <!-- id -->
               <td>${buyEntity.user.username}</td>
               <!-- real name -->
-              <td>${buyEntity.user.name}</td>
+              <td>@${buyEntity.user.name}</td>
               <!-- address -->
               <td>${buyEntity.user.address}</td>
               <!-- time -->
               <td>${buyEntity.paymenttime}</td>
 
-			
-
               <!-- 모달 영역 -->
+
               <td>
-                <div id="modal">
+                
     
                   <div id="root">
-                    <button type="button" class="btn btn-light" id="modal_open_btn">product list</button>
+                    <button type="button" class="btn btn-light" id="modal_opne_btn">상품 리스트</button>
                     <!-- <button type="button" id="modal_open_btn"></button> -->
                        
                   </div>
 
-
+                  <div id="modal">
                   <!-- 여기에 DB에서 product 주문 목록을 가져옵니다. -->
-                  <div class="modal_content">
+                  <div class="modal-content">
                       
-                    <!-- 상품이름 -->
-                      <p>productName: ${buyEntity.product.productname}</p>
+                      <!-- 상품이름 -->
+                      <p>상품명</p><p style="font-weight: bold;">${buyEntity.product.productname}</p>
                       <!-- 상품 코드 -->
-                      <p>productCode: ${buyEntity.product.id}</p>
-                      
+                      <p>상품코드</p><p style="font-weight: bold;">${buyEntity.product.id}</p>
                       <!-- 상품 사이즈 -->
-                      <p>productSize: ${buyEntity.product.size}</p>
+                      <p>상품사이즈</p><p style="font-weight: bold;">${buyEntity.product.size}</p>
                       
                       <button type="button" class="btn btn-light" id="modal_close_btn">close</button>
                     
@@ -164,8 +131,7 @@
 
             </tr>
            
-</c:forEach>
-           
+            </c:forEach>
           </tbody>
         </table>
 
@@ -178,17 +144,20 @@
                 <div>전체선택</div>
               </label>
             </div>
-            <button type="button" onclick="deleteCheck()" class="btn btn-danger">
+            <button type="button" onclick="deleteCheck()" class="btn-util">
               배송완료
 
             </button>
           </div>
-       
+          
         </div>
-       
       </section>
+
     </main>
-       
+
+
+<script src="/js/adminmodal.js"></script>
 <script src="/js/admin.js"></script>
-    
+
+
 <%@ include file="../layout/footer.jsp"%>

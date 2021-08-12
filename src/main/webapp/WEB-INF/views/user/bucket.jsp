@@ -17,30 +17,23 @@
 				<li class="mb-1">
 					<button class="btn btn-toggle align-items-center rounded collapsed"
 						data-bs-toggle="collapse" data-bs-target="#home-collapse"
-						aria-expanded="true">Service Information</button>
+						aria-expanded="true">서비스 정보</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/CommentsManagement" class="link-dark rounded">Comments
-									management</a></li>
-							<li><a href="/bucket/${principal.id}" class="link-dark rounded">Shopping
-									bucket</a></li>
-							<li><a href="#" class="link-dark rounded">Payment list</a></li>
+							<li><a href="/CommentsManagement" class="link-dark rounded">댓글 관리</a></li>
+							<li><a href="/bucket/${principal.id}" class="link-dark rounded">장바구니</a></li>
+							<li><a href="/payment/${principal.id}" class="link-dark rounded">구매 목록</a></li>
 						</ul>
 					</div>
 				</li>
-				
-				<li class="border-top my-3"></li>
+				            <li class="border-top my-3"></li>
 				<li class="mb-1">
 					<button class="btn btn-toggle align-items-center rounded collapsed"
 						data-bs-toggle="collapse" data-bs-target="#account-collapse"
-						aria-expanded="false">Account</button>
+						aria-expanded="false">계정</button>
 					<div class="collapse" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
-							<li><a href="#" class="link-dark rounded">Profile
-									modification</a></li>
-							<li><a href="#" class="link-dark rounded">Settings</a></li>
-							<li><a href="#" class="link-dark rounded">Sign out</a></li>
+							<li><a href="#" class="link-dark rounded">로그아웃</a></li>
 						</ul>
 					</div>
 				</li>
@@ -58,6 +51,14 @@
 
 
 
+		<!-- 장바구니 탭 글자들 -->
+		<!-- DB에서 가져와서 던져줌 -->
+		<table class="tab-text">
+			<thead>
+				<td class="line-bucket"></td>
+			</thead>
+		</table>
+
 		<div>
 			<!-- <h4>내가 쓴 상품평</4> -->
 		</div>
@@ -69,24 +70,12 @@
 				
 
 				<!-- 장바구니 테이블 -->
-				<!-- DB에서 가져와서 던져줌 -->
 				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col"></th>
-							<th class="th-align" scope="col">상품정보</th>
-							<th scope="col">판매가</th>
-							<th scope="col">수량</th>
-							<th scope="col">합계</th>
-							<th scope="col">삭제</th>
-
-						</tr>
-					</thead>
 					<tbody>
 					
 						<c:forEach var="bucketProduct" items="${bucketProductsEntity}">
 						<!-- 한줄 시작 -->
-						<tr>
+						<tr class="">
 							<!-- th, for문으로 돌립니다 -->
 							<!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
 							<th scope="row">
@@ -103,29 +92,28 @@
 
 
 							<!-- 상품정보 -->
-							<td>
+							<td class="product-info-master">
 								<div class="product-info-box">
 									<div class="minibox-img">
 										<!-- 이미지 -->
 										<img id="img1"
-											src="/upload/${bucketProduct.product.image}"
+											src="/upload/${bucketProduct.image}"
 											class="rounded float" alt="...">
 									</div>
 
 									<!-- 제품 이름 -->
 									<div class="product-inforamtion" style="font-weight: 800;">
-										${bucketProduct.product.productname}</div>
+										${bucketProduct.productname}</div>
 
 									<!-- 사이즈 -->
-									<div class="product-size">
-										size
+									<div class="product-size" style="display: flex; margin-left: 5px;">
+										<input class="num-wrap" value="${bucketProduct.size}" readonly>
 										<!-- 여기에 사이즈 EL 표현식 -->
-										<input class="num-wrap" value="${bucketProduct.product.size}" readonly>
 									</div>
 									<!-- 상품 페이지 버튼 -->
 									<div class="product-button">
 										<button type="button" class="btn btn-light"
-											style="margin-left: 20px;" href="#">상품 페이지</button>
+											style="margin-left: 40px;" href="#">상품 페이지</button>
 									</div>
 								</div>
 
@@ -136,39 +124,20 @@
 								<td>
 									<div class="info-align-box">
 										<!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
-										${bucketProduct.product.price}
 									</div>
 								</td>
-								<!-- 수량 -->
-								<td>
-									<div class="info-align-box">
-										<!-- 수량 박스 -->
-										<div>
-											<input class="num-wrap" value="2" readonly>
-										</div>
 
-										<div class="up-and-down">
-											<img
-												src="https://img.icons8.com/material-outlined/24/000000/up.png" />
-											<img
-												src="https://img.icons8.com/material-outlined/24/000000/down--v1.png" />
-										</div>
-
-									</div>
-								</td>
-								<!-- 합계 -->
-								<!-- 계산되어서 되는 합계 추가 -->
 								<td>
 									<div class="info-align-box">
 										<div>
-											<input class="all-count" value="47.98$" readonly>
+											<input class="all-count" value="${bucketProduct.price}" readonly>
 										</div>
 
 									</div>
 								</td>
 								<td>
 									<div class="info-align-box">
-										<button type="button" class="btn btn-danger" onclick = "selectProductDelete(${principal.id})">삭제</button>
+										<button type="button" class="btn-util btn-danger" onclick = "selectProductDelete()">삭제</button>
 									</div>
 								</td>
 
@@ -193,8 +162,8 @@
 								<div>전체선택</div>
 							</label>
 						</div>
-						<button type="button" class="btn btn-danger" onclick = "selectProductDelete(${principal.id})">삭제</button>
-						<button type="button" class="btn btn-success" onclick="buy(${principal.id})">주문하기</button>
+						<button type="button" class="btn-util btn-danger" onclick = "selectProductDelete(${principal.id})">삭제</button>
+						<button type="button" class="btn-sujung btn-success" onclick="buy(${bucketProductEntity.id})">주문하기</button>
 					</div>
 
 				</div>

@@ -5,7 +5,7 @@
 <main class="main-box">
 
 
-	<!-- section-->
+	<!--ì»¨íì¸  ìì­ section-->
 	<section class="section">
 		<div class="title">
 			<h2>Payment Page</h2>
@@ -15,8 +15,11 @@
 
 
 		<div>
+			<!-- <h4>ë´ê° ì´ ìíí</4> -->
 		</div>
+		<!-- ì¥ë°êµ¬ë -->
 		<section class="bucket-box">
+			<!-- ëª¨ë¬ ì¬ì©í´ì ìíí ë°ë¡ íì´ë¸ì ë£ê¸° -->
 			<!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
 
 
@@ -27,17 +30,21 @@
 						<tr>
 							<th scope="col"></th>
 							<th class="th-align" scope="col">상품정보</th>
-							<th scope="col">판매가</th>
-							<th scope="col">수량</th>
-							<th scope="col">합계</th>
+							<th scope="col">상품가격</th>
+
 							<th scope="col"></th>
 
 						</tr>
 					</thead>
 					<tbody>
+						
+
+						<!-- íì¤ ìì -->
 						<tr>
+							<!-- th, forë¬¸ì¼ë¡ ëë¦½ëë¤ -->
+							<!-- ëì¤ì ì¬ê¸°ì EL ííìì¼ë¡ ë¿ë ¤ì¤ëë¤ -->
 							<th scope="row">
-								<!-- <div class="info-align-box">
+								<!-- ì²´í¬ë°ì¤ --> <!-- <div class="info-align-box">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                       <label class="form-check-label" for="flexCheckDefault">
@@ -48,25 +55,31 @@
 							</th>
 
 
-							
+
+							<!-- ìíì ë³´ -->
+							<!-- ì¬ê¸°ìì ìí ì´ë¦ì í´ë¦­íë©´ ê·¸ ìíì í´ë¹íë detailì ë¿ë¦¬ë ê¸°ë¥ ì¶ê° -->
 							<td>
 								<div class="product-info-box">
 									<div class="minibox-img">
-										<!-- 상품 이미지 -->
+										<!-- ì´ë¯¸ì§ -->
 										<img id="img1"
 											src="/upload/${productEntity.image}"
 											class="rounded float" alt="...">
 									</div>
 
-									<!-- 상품 이름 -->
+									<!-- ì í ì´ë¦ -->
 									<div class="product-inforamtion" style="font-weight: 800;">
 										${productEntity.productname}</div>
 
-									<!-- 상품 사이즈 -->
+									<!-- ì¬ì´ì¦ ì¶ê° -->
+									<!-- ì¬ì´ì¦ ì»´í¬ëí¸ ì¶ê° -->
 									<div class="product-size">
 										size
+										<!-- ì¬ê¸°ì ì¬ì´ì¦ EL ííì -->
 										<input class="num-wrap" value="${productEntity.size}" readonly>
 									</div>
+									<!-- ìí íì´ì§ ë²í¼ -->
+									<!-- ì¬ê¸°ì DBì°ëí´ì ìí íì´ì§ ì ë³´ë¥¼ ë°ìì ë°ë¡ ê° ì ìê² í©ëë¤ -->
 									<!-- <div class="product-button"> -->
 									<!-- <button type="button" class="btn btn-light" style="margin-left: 20px;" href="#">ìí íì´ì§</button>    -->
 									<!-- </div> -->
@@ -75,21 +88,20 @@
 							</td>
 
 
+
 							<div class="info-align">
-								<!-- 상품가격 -->
+								<!-- ê°ê²© -->
 								<td>
 									<div class="info-align-box">
+										<!-- ì¬ê¸°ì ELííìì¼ë¡ ê°ê²©ì ë°ììµëë¤ -->
 										${productEntity.price}
 									</div>
 								</td>
-								<!-- 수량 -->
+								<!-- ìë -->
+								<!-- ìë ì»´í¬ëí¸ ì¶ê° -->
 								<td>
 									<div class="info-align-box">
 
-										<!-- 상품 수량정보 value안에 값들어갑니다 -->
-										<div>
-											<input class="num-wrap" value="2" readonly>
-										</div>
 
 										<!-- <div class="up-and-down">
                           <img src="https://img.icons8.com/material-outlined/24/000000/up.png"/>
@@ -98,16 +110,8 @@
 
 									</div>
 								</td>
-								<!-- 합계 -->
-								<!-- 상품 합계입니다 가격*수량 = 합계value -->
-								<td>
-									<div class="info-align-box">
-										<div>
-											<input class="all-count" value="47.98$" readonly>
-										</div>
+								<!-- í©ê³ -->
 
-									</div>
-								</td>
 								<!-- <td>
                     <div class="info-align-box">
                       <button type="button" class="btn btn-danger">
@@ -119,11 +123,16 @@
 
 							</div>
 						</tr>
-						<!-- 한줄 끝 row end -->
+						<!-- íì¤ ì¢ë£ -->
 
 
-						<!-- 한줄 시작 row start -->
-					
+
+							
+
+						<!-- íì¤ ì¢ë£ -->
+
+
+
 
 					</tbody>
 				</table>
@@ -271,7 +280,7 @@ function goPaymentAPI(id,productname,image,detail,price,size,category,gender,ema
     IMP.request_pay({
         pg: "html5_inicis",//이니시스 웹표준 결제창
         pay_method: "card",//결제방법
-        merchant_uid: "354351351",//주문번호
+        merchant_uid: "12341544",//주문번호
         name: productname,//상품명
         amount: price,//가격
         buyer_email: email,//이메일
