@@ -97,17 +97,17 @@
 									<div class="minibox-img">
 										<!-- 이미지 -->
 										<img id="img1"
-											src="/upload/${bucketProduct.image}"
+											src="/upload/${bucketProduct.product.image}"
 											class="rounded float" alt="...">
 									</div>
 
 									<!-- 제품 이름 -->
 									<div class="product-inforamtion" style="font-weight: 800;">
-										${bucketProduct.productname}</div>
+										${bucketProduct.product.productname}</div>
 
 									<!-- 사이즈 -->
 									<div class="product-size" style="display: flex; margin-left: 5px;">
-										<input class="num-wrap" value="${bucketProduct.size}" readonly>
+										<input class="num-wrap" value="${bucketProduct.product.size}" readonly>
 										<!-- 여기에 사이즈 EL 표현식 -->
 									</div>
 									<!-- 상품 페이지 버튼 -->
@@ -130,7 +130,7 @@
 								<td>
 									<div class="info-align-box">
 										<div>
-											<input class="all-count" value="${bucketProduct.price}" readonly>
+											<input class="all-count" value="${bucketProduct.product.price}" readonly>
 										</div>
 
 									</div>

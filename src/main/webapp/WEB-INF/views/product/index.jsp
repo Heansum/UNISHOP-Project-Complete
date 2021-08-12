@@ -73,7 +73,7 @@
 			<div class="content-img">
 				
 
-				<a href="/product/productPage">
+				<a href="/product/productPage/${product.category}">
 					<div class="content-wrap-img">
 
 						<img
@@ -115,7 +115,7 @@
 			<div class="content-img">
 				
 
-				<a href="/product/productPage">
+				<a href="/product/productPage/${product.category}">
 					<div class="content-wrap-img">
 
 						<img
