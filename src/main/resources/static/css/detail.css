@@ -199,3 +199,29 @@
   width: 90px;
   height: 42px;
 }
+
+/* 사이즈 선택 그룹 크기입니다 */
+.input-wrap-detail {
+	width: 150px;
+	margin: 10px;
+}
+
+.input-group-detail {
+	display:flex;
+	flex-direction: row;
+/* 	padding:5px; */
+}
+
+#size{
+	display:flex;
+	margin: 3px;
+}
+
+#selectButton{
+	display:flex;
+	margin: 3px;
+	width: 50px;
+	font-size: 12px;
+	padding-left: 4px;
+	padding-right: 4px;
+}

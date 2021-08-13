@@ -15,21 +15,22 @@
 <!-- 				<form -->
 <%-- 					onsubmit="sizeSelect(${productEntity.id},${productEntity.productname},${productEntity.image},${productEntity.detail},${productEntity.price},${productEntity.category},${productEntity.gender})" --%>
 <!-- 					id="size-form"> -->
-					<div class="input-wrap">
-						<div class="input-group">
+					<div class="input-wrap-detail">
+						<div class="input-group-detail">
 							<select class="form-select" id="size"
 								aria-label="Example select with button addon" name="size">
-								<option selected>Choose...</option>
+								<option selected>Size</option>
 								<option value="S">S</option>
 								<option value="M">M</option>
 								<option value="L">L</option>
 								<option value="XL">XL</option>
 							</select>
 							<!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
+							<button class="btn btn-outline-secondary" id="selectButton" type="button" onclick="sizeSelect('${productEntity.id}','${productEntity.productname}','${productEntity.image}','${productEntity.detail}','${productEntity.price}','${productEntity.category}','${productEntity.gender}')">
+						Select</button>
 						</div>
 					</div>
-					<button class="btn btn-outline-secondary" type="button" onclick="sizeSelect('${productEntity.id}','${productEntity.productname}','${productEntity.image}','${productEntity.detail}','${productEntity.price}','${productEntity.category}','${productEntity.gender}')">
-					SizeSelect</button>
+					
 <!-- 				</form> -->
 				<!-- 				사이즈끝 -->
 				<p>${productEntity.price}</p>
