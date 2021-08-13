@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cos.unishop.domain.comment.Comment;
 import com.cos.unishop.domain.comment.CommentRepository;
@@ -67,7 +70,21 @@ public class ProductController {
 //	    }
 	    
 	
-	    
+	    @PutMapping("/sizeUpdate/{id}")
+	    public @ResponseBody String productSizeSelect(@PathVariable int id, @RequestBody Product product) {
+	    	
+	    	System.out.println(product.getImage());
+	    	Product productEntity = productRepository.findById(id).get();
+	    	productEntity.setProductname(product.getProductname());
+	    	productEntity.setDetail(product.getDetail());
+	    	productEntity.setCategory(product.getCategory());
+	    	productEntity.setImage(product.getImage());
+	    	productEntity.setPrice(product.getPrice());
+	    	productEntity.setSize(product.getSize());
+	    	productRepository.save(productEntity);
+	    	return "ok";
+	    	
+	    }
 	    
 	    
 	  

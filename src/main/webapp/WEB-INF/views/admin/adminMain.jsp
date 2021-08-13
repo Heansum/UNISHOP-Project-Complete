@@ -55,25 +55,26 @@
         <hr id="hr"/>
 
         <div class="contents-container">
+        <c:forEach var="products" items="${productcEntity}">
           <div class="contents">
             
-            <p>contents</p>
+            <p> ${products.id}</p>
             <!--DB에서 가져와서 for문 돌림-->
             <!--img-->
             <div>
-              <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=349&q=80">
+              <img src="/upload/${products.image}">
             </div>
             <!--information(Code for clothes, clothes name)-->
             <div>
-              <p>${ProductCode}</p>
+              <a href="/product/${products.id}">${products.productname}</a>
             </div>
             <!--price-->
             <div>
-              <p>${ProductPrice}</p>
+              <p>${products.price}$</p>
             </div>
             <hr/>
           </div>
-
+		</c:forEach>
 
 
         </div>

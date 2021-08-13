@@ -21,6 +21,7 @@ public class Buy {
 
 	private String paymenttime;
 	
+	private String sizeselect;
 	
 	@JoinColumn(name = "product_id")
 	@ManyToOne

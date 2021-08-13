@@ -71,13 +71,15 @@ public class AdminController {
 	public String logout() {
 		System.out.println("로그아웃 됩니까? 네 됩니다!");
 		session.invalidate();
-		return "redirect:/adminLogin";
+		return "redirect:/adminLoginForm";
 	}
 
 	// 관리자페이지 메인ㄱㄱ
 	@GetMapping("/admin/main")
-	public String adminMain() {
+	public String adminMain(Model model) {
 
+		
+		model.addAttribute("productcEntity", productRepository.findAll());
 		return "admin/adminMain";
 	}
 

@@ -214,9 +214,6 @@ function selectProductDelete(userId) {
 	
 }
 
-
-
-
 // 체크박스 모두 선택하는 함수
 function selectAll(selectAll) {
 	const checkboxes
