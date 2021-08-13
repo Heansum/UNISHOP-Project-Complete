@@ -89,6 +89,9 @@ public class PaymentController {
 		int postId = Integer.parseInt(payment.getBuyer_postcode()); 
 		System.out.println(postId);
 		Product product = productRepository.findById(postId).get();
+		buy.setSizeselect(product.getSize());
+		System.out.println("사이즈 저장 성공~ 구메한 사이즈는 "+product.getSize());
+		
 		System.out.println("구매 저장시작");
 		buy.setProduct(product);
 		buy.setUser(principal);

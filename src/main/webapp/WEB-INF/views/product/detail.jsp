@@ -11,7 +11,27 @@
 			<!-- 상품 정보 -->
 			<section class="information">
 				<h3>${productEntity.productname}</h3>
-				<p>size: S M L</p>
+				<!-- 				사이즈선택 ux시작 -->
+<!-- 				<form -->
+<%-- 					onsubmit="sizeSelect(${productEntity.id},${productEntity.productname},${productEntity.image},${productEntity.detail},${productEntity.price},${productEntity.category},${productEntity.gender})" --%>
+<!-- 					id="size-form"> -->
+					<div class="input-wrap">
+						<div class="input-group">
+							<select class="form-select" id="size"
+								aria-label="Example select with button addon" name="size">
+								<option selected>Choose...</option>
+								<option value="S">S</option>
+								<option value="M">M</option>
+								<option value="L">L</option>
+								<option value="XL">XL</option>
+							</select>
+							<!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
+						</div>
+					</div>
+					<button class="btn btn-outline-secondary" type="button" onclick="sizeSelect('${productEntity.id}','${productEntity.productname}','${productEntity.image}','${productEntity.detail}','${productEntity.price}','${productEntity.category}','${productEntity.gender}')">
+					SizeSelect</button>
+<!-- 				</form> -->
+				<!-- 				사이즈끝 -->
 				<p>${productEntity.price}</p>
 			</section>
 
@@ -65,15 +85,14 @@
 		<!-- 고객 상품평 -->
 		<section class="member-comments-box">
 			<button type="button" class="pyong-btn" data-bs-toggle="modal"
-					data-bs-target="#exampleModal">
-					상품평 쓰기</button>
+				data-bs-target="#exampleModal">상품평 쓰기</button>
 			<!-- 모달 사용해서 상품평 바로 테이블에 넣기 -->
 			<!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
 
 			<!-- 상품평 쓰기 -->
 			<div class="input-comments">
 				<!-- Button trigger modal -->
-				
+
 
 				<!-- Modal -->
 				<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -110,16 +129,15 @@
 										</div>
 
 										<div class="modal-flex">
-											
-												
-											
+
+
+
 											<section class="modal-img1">
 
 												<img id="img-modal" src="/upload/${productEntity.image}"
 													class="modal-img" alt="...">
-													<div class="modal-text">
-													${productEntity.productname}</div>
-												
+												<div class="modal-text">${productEntity.productname}</div>
+
 
 
 
@@ -236,7 +254,8 @@
 						<c:forEach var="comments" items="${commentsEntity}">
 							<tr>
 								<th scope="row">${comments.id}</th>
-								<td><img id="img1" src="/upload/${comments.image}" class="modal-img float" alt="..."></td>
+								<td><img id="img1" src="/upload/${comments.image}"
+									class="modal-img float" alt="..."></td>
 								<td>${comments.score}</td>
 								<td>${comments.productcs}</td>
 								<td>${comments.sizecs}</td>
@@ -260,25 +279,18 @@
 						<!--                 <td>21-07-21</td> -->
 						<!--               </tr> -->
 					</tbody>
-					
+
 				</table>
 				<!-- Button trigger modal -->
-				
 		</section>
 	</div>
 </main>
 
-<script>
-	function goLoginCheck() {
-		alert("로그인하셔야 들어갈수 있는 페이지입니다.");
-		location.href = "/auth/loginForm";
-	}
 
-	function goPayment(id) {
-		alert("결제화면으로 이동하시겠습니까?");
-		console.log(id)
-		location.href = "/product/payment/" + id;
-	}
-</script>
+
+<!-- <script> -->
+<script src="/js/sizeSelect.js"></script>
+
+<!-- </script> -->
 <script src="/js/bucket.js"></script>
 <%@ include file="../layout/footer.jsp"%>
