@@ -40,6 +40,9 @@
 .table {
   width: 1000px;
 }
+#table-yabal {
+  width: 1200px;
+}
 
 /* 테이블에서 판매가, 수량, 합계, 삭제버튼 align입니다 */
 /* .info-align {

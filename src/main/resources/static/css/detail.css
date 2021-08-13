@@ -113,6 +113,18 @@
   float: right;
 }
 
+.pyong-btn-sibak {
+  position: absolute;
+  background-color: #e2e2e2;
+  border: #f8f9fa;
+  color: #313131;
+  width: 100px;
+  height: 40px;
+  border-radius: 7px;
+  float: right;
+  margin-top: 5px;
+}
+
 .modal-img {
   width: 100px;
 }

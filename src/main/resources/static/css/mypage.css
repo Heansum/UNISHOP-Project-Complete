@@ -84,6 +84,12 @@ hr {
   align-items: center;
   /* justify-content: center; */
 }
+.info-align-box2 {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
 
 /* 상품정보 미니 박스 입니다 */
 .product-info-box {
@@ -95,12 +101,26 @@ hr {
   margin-left: 50px;
   /* padding-right: 200px; */
 }
+
+.product-info-box2 {
+  display: flex;
+  border: 0px;
+  justify-content: center;
+  align-items: center;
+  /* padding-right: 200px; */
+}
 /* 상품정보 이미지입니다 */
 .minibox-img {
   display: flex;
   width: 100px;
   height: 100px;
   flex: 3;
+}
+
+.minibox-img2 {
+  display: flex;
+  width: 100px;
+  height: 100px;
 }
 /* 상품정보 입니다 */
 .product-inforamtion {
@@ -110,6 +130,8 @@ hr {
   align-items: center;
   justify-content: center;
 }
+
+
 
 .product-info-master {
   display: flex;
@@ -151,4 +173,38 @@ hr {
 }
 #width-max {
   align-self: center;
+}
+
+.paymenttime-bucket {
+  text-align: center;
+  align-items: center;
+}
+
+.form-floating {
+  width: 300px;
+  
+}
+
+.button-paymentre {
+  background-color: #f5f5f5; 
+  border: #f8f9fa; 
+  color: #383838;
+  width: 300px;
+  height: 50px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.update-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bal-ak {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  border: #ff9898;
+  justify-content: flex-end;
 }

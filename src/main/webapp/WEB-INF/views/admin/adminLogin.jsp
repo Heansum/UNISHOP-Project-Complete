@@ -10,7 +10,7 @@
 
 		<form action="/adminLogin" method="post">
 
-			<h1 class="h3 mb-3 fw-normal">관리자만 진입 가능한 페이지 입니다.</h1>
+			<h1 class="h3 mb-3 fw-normal" style="font-style: italic; font-size: 40px;">Administrator</h1>
 
 			<div class="form-floating">
 				<input type="text" class="form-control" placeholder="ID"

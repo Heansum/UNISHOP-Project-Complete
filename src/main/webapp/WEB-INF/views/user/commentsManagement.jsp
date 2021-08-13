@@ -21,7 +21,7 @@
 						aria-expanded="true">서비스 정보</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/CommentsManagement" class="link-dark rounded">댓글 관리</a></li>
+							<li><a href="/CommentsManagement" class="link-dark rounded">상품평 관리</a></li>
 							<li><a href="/bucket/${principal.id}" class="link-dark rounded">장바구니</a></li>
 							<li><a href="/payment/${principal.id}" class="link-dark rounded">구매 목록</a></li>
 						</ul>
@@ -60,6 +60,12 @@
 						aria-expanded="false">계정</button>
 					<div class="collapse" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+
+							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
+							<li><a href="/user/Certified" class="link-dark rounded">회원 정보 수정
+									</a></li>
+							<li><a href="/userDeleteForm" class="link-dark rounded">회원 탈퇴</a></li>
+
 							<li><a href="#" class="link-dark rounded">로그아웃</a></li>
 						</ul>
 					</div>
@@ -72,7 +78,7 @@
 	<!--컨텐츠 영역 section-->
 	<section class="section" style="flex: 4;">
 		<div>
-			<h2>Comments management</h2>
+			<h2>상품평 관리</h2>
 			<!-- <hr/> -->
 		</div>
 

@@ -20,19 +20,25 @@
 						aria-expanded="true">서비스 정보</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/CommentsManagement" class="link-dark rounded">댓글 관리</a></li>
+							<li><a href="/CommentsManagement" class="link-dark rounded">상품평 관리</a></li>
 							<li><a href="/bucket/${principal.id}" class="link-dark rounded">장바구니</a></li>
 							<li><a href="/payment/${principal.id}" class="link-dark rounded">구매 목록</a></li>
 						</ul>
 					</div>
 				</li>
-				            <li class="border-top my-3"></li>
+				<li class="border-top my-3"></li>
 				<li class="mb-1">
 					<button class="btn btn-toggle align-items-center rounded collapsed"
 						data-bs-toggle="collapse" data-bs-target="#account-collapse"
 						aria-expanded="false">계정</button>
 					<div class="collapse" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+
+							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
+							<li><a href="/user/Certified" class="link-dark rounded">회원 정보 수정
+									</a></li>
+							<li><a href="/userDeleteForm" class="link-dark rounded">회원 탈퇴</a></li>
+
 							<li><a href="#" class="link-dark rounded">로그아웃</a></li>
 						</ul>
 					</div>
@@ -45,7 +51,7 @@
 	<!--컨텐츠 영역 section-->
 	<section class="mypage-section">
 		<div class="title">
-			<h2>Shopping bucket</h2>
+			<h2>장바구니</h2>
 			<!-- <hr/> -->
 		</div>
 
@@ -72,7 +78,7 @@
 				<!-- 장바구니 테이블 -->
 				<table class="table">
 					<thead>
-						<tr>
+						<tr style="text-align: center;">
 							<th scope="col"></th>
 							<th class="th-align" scope="col">상품명</th>
 							<th scope="col">사이즈</th>
@@ -104,7 +110,7 @@
 							<!-- 상품정보 -->
 							<td class="product-info-master">
 								<div class="product-info-box">
-									<div class="minibox-img">
+									<div class="minibox-img"  style="flex: 0;">
 										<!-- 이미지 -->
 										<img id="img1"
 											src="/upload/${bucketProduct.product.image}"
@@ -112,14 +118,10 @@
 									</div>
 
 									<!-- 제품 이름 -->
-									<div class="product-inforamtion" style="font-weight: 800;">
+									<div class="product-inforamtion" style="font-weight: 800; margin-left: -75px;">
 										${bucketProduct.product.productname}</div>
 
-									<!-- 사이즈 -->
-									<div class="product-size" style="display: flex; margin-left: 5px;">
-										<input class="num-wrap" value="${bucketProduct.product.size}" readonly>
-										<!-- 여기에 사이즈 EL 표현식 -->
-									</div>
+									
 									<!-- 상품 페이지 버튼 -->
 									<%-- <div class="product-button">
 										<button type="button" class="btn btn-light"
@@ -133,12 +135,16 @@
 								<!-- 가격 -->
 								<td>
 									<div class="info-align-box">
-										<!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
+										<!-- 사이즈 -->
+									<div class="product-size" style="display: flex; margin-left: 12px;">
+										<input class="num-wrap" value="${bucketProduct.product.size}" readonly>
+										<!-- 여기에 사이즈 EL 표현식 -->
+									</div>
 									</div>
 								</td>
 
 								<td>
-									<div class="info-align-box">
+									<div class="info-align-box2">
 										<div>
 											<input class="all-count" value="${bucketProduct.product.price}" readonly>
 										</div>
@@ -146,7 +152,7 @@
 									</div>
 								</td>
 								<td>
-									<div class="info-align-box">
+									<div class="info-align-box2">
 										<button type="button" class="btn-util btn-danger" onclick = "selectProductDelete()">삭제</button>
 									</div>
 								</td>

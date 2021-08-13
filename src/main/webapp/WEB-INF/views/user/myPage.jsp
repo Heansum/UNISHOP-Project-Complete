@@ -19,7 +19,7 @@
 						data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">서비스 정보</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/CommentsManagement" class="link-dark rounded">댓글 관리</a></li>
+							<li><a href="/CommentsManagement" class="link-dark rounded">상품평 관리</a></li>
 							<li><a href="/bucket/${principal.id}" class="link-dark rounded">장바구니</a></li>
 							<li><a href="/payment/${principal.id}" class="link-dark rounded">구매 목록</a></li>
 						</ul>
@@ -76,7 +76,7 @@
 	<!--메인 section-->
 	<section class="mypage-section" style="flex: 4;">
 		<div>
-			<h2>Overview</h2>
+			<h2>마이페이지</h2>
 		</div>
 
 		<hr />

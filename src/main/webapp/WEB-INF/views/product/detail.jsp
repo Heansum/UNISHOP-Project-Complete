@@ -15,7 +15,7 @@
 <!-- 				<form -->
 <%-- 					onsubmit="sizeSelect(${productEntity.id},${productEntity.productname},${productEntity.image},${productEntity.detail},${productEntity.price},${productEntity.category},${productEntity.gender})" --%>
 <!-- 					id="size-form"> -->
-					<div class="input-wrap">
+					<div class="input-wrap" style="width: 80%;">
 						<div class="input-group">
 							<select class="form-select" id="size"
 								aria-label="Example select with button addon" name="size">
@@ -32,7 +32,7 @@
 					SizeSelect</button>
 <!-- 				</form> -->
 				<!-- 				사이즈끝 -->
-				<p>${productEntity.price}</p>
+				<p>${productEntity.price} 원</p>
 			</section>
 
 			<!-- 상품 이미지 -->
@@ -84,13 +84,12 @@
 
 		<!-- 고객 상품평 -->
 		<section class="member-comments-box">
-			<button type="button" class="pyong-btn" data-bs-toggle="modal"
-				data-bs-target="#exampleModal">상품평 쓰기</button>
+			
 			<!-- 모달 사용해서 상품평 바로 테이블에 넣기 -->
 			<!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
 
 			<!-- 상품평 쓰기 -->
-			<div class="input-comments">
+			<div class="input-comments" style="text-align: center; justify-content: flex-end;">
 				<!-- Button trigger modal -->
 
 
@@ -237,7 +236,8 @@
 				</form>
 				<!-- 댓글 테이블 -->
 				<!-- DB에서 가져와서 던져줌 -->
-				<table class="table">
+				<table class="table" id="table-yabal">
+				<button type="button" class="pyong-btn-sibak" data-bs-toggle="modal" data-bs-target="#exampleModal">상품평 쓰기</button>
 					<thead>
 						<tr>
 							<th scope="col">#</th>
@@ -247,7 +247,8 @@
 							<th scope="col">사이즈</th>
 							<th scope="col">색감</th>
 							<th scope="col">등록자</th>
-							<th scope="col">등록일</th>
+							<th scope="col">등록일 </th>
+							
 						</tr>
 					</thead>
 					<tbody>
