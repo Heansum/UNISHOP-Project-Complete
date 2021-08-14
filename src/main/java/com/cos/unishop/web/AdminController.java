@@ -8,9 +8,11 @@ import java.util.Random;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -101,7 +103,7 @@ public class AdminController {
 
 	// 관리자 상품등록컨트롤러
 	@PostMapping("/admin/update")
-	public String product(ProductDto productDto) {
+	public String product(@Valid ProductDto productDto, BindingResult bindingResult) {
 
 		UUID uuid = UUID.randomUUID();
 		Product product = new Product();
@@ -151,7 +153,7 @@ public class AdminController {
 	
 	//상품 수정하는 컨트롤러
 	@PutMapping("/admin/productUpdate")
-	public @ResponseBody String productUpdate(ProductUpdateDto productUpdateDto) {
+	public @ResponseBody String productUpdate(@Valid ProductUpdateDto productUpdateDto, BindingResult bindingResult) {
 
 		UUID uuid = UUID.randomUUID();
 		Product productEntity = productRepository.findById(productUpdateDto.getProductId()).get();

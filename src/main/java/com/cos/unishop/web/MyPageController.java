@@ -3,9 +3,11 @@ package com.cos.unishop.web;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,13 +40,13 @@ public class MyPageController {
 	private final HttpSession session;
 
 	// 마이페이지로 가는 컨트롤러
-	@GetMapping("/myPage")
+	@GetMapping("/user/myPage")
 	public String bucket() {
 		return "user/myPage";
 	}
 
 	// 상품평관리하기로 가는 컨트롤러
-	@GetMapping("/CommentsManagement")
+	@GetMapping("/user/CommentsManagement")
 	public String CommentsManagement(Model model) {
 		User principal = (User) session.getAttribute("principal");
 		int userId = principal.getId();
@@ -58,13 +60,13 @@ public class MyPageController {
 	// 지금은 페이지만 연결해놓은거
 	// 나중에 모델에 담에서뿌려야함 ㅇㅋ?
 
-	@GetMapping("/bucket")
+	@GetMapping("/user/bucket")
 	public String myPage() {
 		return "user/bucket";
 	}
 
 	// 구매목록으로 가는 컨트롤러
-	@GetMapping("/payment/{id}")
+	@GetMapping("/user/payment/{id}")
 	public String paymentList(@PathVariable int id, Model model) {
 
 		User principal = (User) session.getAttribute("principal");
@@ -83,6 +85,8 @@ public class MyPageController {
 	// 회원정보 수정탭에서 버튼눌러서 수정의사를 물어보고 회원정보 페이지로
 	// 보내도록 설계했어
 	// userUpdate.js에 보면 자바스크립트로 의사물어보고 회원정보 수정페이지로 이동시킴
+	
+	
 	// 회원정보 수정페이지로 가는 컨트롤러
 	@PostMapping("/user/UpdateCertified")
 	public @ResponseBody String userUpdateForm(User user) {
@@ -105,19 +109,19 @@ public class MyPageController {
 	// 회원정보수정화면으로 가는 컨트롤러
 	
 	@GetMapping("/user/Update")
-	public String userUpdateWont() {
+	public String goUserUpdate() {
 		return "user/userUpdate";
 	}
 
 	// 회원정보 수정을 하는 컨트롤러
-	@PutMapping("/userUpdate/{id}")
-	public @ResponseBody String userUpdate(@PathVariable int id, User user) {
-
-//		User principal = (User) session.getAttribute("principal");
+	@PutMapping("/user/Update/{id}")
+	public @ResponseBody String userUpdate(@Valid @PathVariable int id, User user, BindingResult bindingResult) {
+		System.out.println("실행됨?");
+		User principal = (User) session.getAttribute("principal");
 
 		User userEntity = userRepository.findById(id).get();
 
-//		if (principal.getId() == id) {
+		if (principal.getId() == id) {
 		userEntity.setName(user.getName());
 		userEntity.setUsername(user.getUsername());
 		userEntity.setPassword(user.getPassword());
@@ -126,21 +130,22 @@ public class MyPageController {
 		userEntity.setPhonenumber(user.getPhonenumber());
 		userRepository.save(userEntity);
 		return "ok";
-//		} else {
-//			return Script.href("/userUpdateForm", "회원 정보수정에 실패하셨습니다");
-//		}
+		} else {
+			return Script.href("/user/Certified", "회원 정보수정에 실패하셨습니다");
+		}
 
 	}
 
 	// 회원탈퇴 페이지로 이동하는 컨트롤러
-	@GetMapping("/userDeleteForm")
+	@GetMapping("/user/DeleteForm")
 	public String userDeleteForm() {
 		return "user/userDeleteGo";
 	}
 
 	// 회원탈퇴를 진행하는 컨트롤러
-	@DeleteMapping("/userDelete/{id}")
+	@DeleteMapping("/user/Delete/{id}")
 	public @ResponseBody String userDelete(@PathVariable int id) {
+		System.out.println(id);
 		userRepository.deleteById(id);
 		System.out.println("삭제성공 키모링");
 

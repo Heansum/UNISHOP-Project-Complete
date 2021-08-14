@@ -8,8 +8,10 @@ import java.util.Date;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,9 +43,11 @@ public class CommentController {
 	private final CommentRepository commentRepository;
 	private final HttpSession session;
 	
+	//모든 컨트롤러 권한 필요
+	
 	
 	@PostMapping("/commentSave")
-	public String commentSave(CommnetDto commentDto) {
+	public String commentSave(@Valid CommnetDto commentDto,BindingResult bindingResult) {
 		System.out.println(commentDto.getImage());
 		//저장해야하는거
 		//등록일자
@@ -92,8 +96,9 @@ public class CommentController {
 	
 	//상품평 수정하는 컨트롤러
 	@PutMapping("/commentUpdate")
-	public @ResponseBody String commentUpdate(CommentUpdateDto commentUpdateDto) {
+	public @ResponseBody String commentUpdate(@Valid  CommentUpdateDto commentUpdateDto, BindingResult bindingResult) {
 		System.out.println(1);
+		System.out.println(commentUpdateDto.getId());
 		Comment commentEntity = commentRepository.findById(commentUpdateDto.getId()).get();
 		System.out.println(2);
 		//System.out.println(commentEntity);
@@ -152,6 +157,8 @@ public class CommentController {
 		
 	}
 	
+	
+	//권한 필요
 	@DeleteMapping("/comment/{id}")
 	public @ResponseBody String commentDelete(@PathVariable int id) {
 		User principal =(User) session.getAttribute("principal");

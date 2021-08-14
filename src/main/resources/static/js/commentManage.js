@@ -31,6 +31,7 @@ async function commentUpdate(){
 	let form = document.querySelector("#my-form");
 	const formData = new FormData(form);
 
+console.log(formData);
 	let response =await fetch("/commentUpdate",{
 		method:"put",
 		body:formData,
@@ -41,6 +42,6 @@ async function commentUpdate(){
 	console.log(parseResponse);
 	
 	if(parseResponse ==="ok"){
-		location.href = "/CommentsManagement";// location는 화면전환을 해주는 객체
+		location.href = "/user/CommentsManagement";// location는 화면전환을 해주는 객체
 	}
 }

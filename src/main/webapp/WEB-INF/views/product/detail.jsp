@@ -84,9 +84,17 @@
 
 
 		<!-- 고객 상품평 -->
-		<section class="member-comments-box">
+<!-- 		로그인안된상태면 상품평 쓰기 버튼 안보이도록수정 -->
+		<c:choose>
+		<c:when test="${empty sessionScope.principal}">
+	
+				</c:when>
+				<c:otherwise>
+					<section class="member-comments-box">
 			<button type="button" class="pyong-btn" data-bs-toggle="modal"
 				data-bs-target="#exampleModal">상품평 쓰기</button>
+				</c:otherwise>
+				</c:choose>
 			<!-- 모달 사용해서 상품평 바로 테이블에 넣기 -->
 			<!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
 

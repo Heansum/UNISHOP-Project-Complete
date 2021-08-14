@@ -20,11 +20,11 @@
 						aria-expanded="true">Service Information</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/CommentsManagement" class="link-dark rounded">Comments
+							<li><a href="/user/CommentsManagement" class="link-dark rounded">Comments
 									management</a></li>
-							<li><a href="/bucket/${principal.id}" class="link-dark rounded">Shopping
+							<li><a href="/user/bucket/${principal.id}" class="link-dark rounded">Shopping
 									bucket</a></li>
-							<li><a href="/payment/${principal.id}" class="link-dark rounded">Payment list</a></li>
+							<li><a href="/user/payment/${principal.id}" class="link-dark rounded">Payment list</a></li>
 						</ul>
 					</div>
 				</li>
@@ -62,10 +62,10 @@
 					<div class="collapse" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
-							<li><a href="/userUpdate" class="link-dark rounded">회원 정보 수정
+							<li><a href="/user/Certified" class="link-dark rounded">회원 정보 수정
 									</a></li>
-							<li><a href="#" class="link-dark rounded">회원 탈퇴</a></li>
-							<li><a href="#" class="link-dark rounded">로그아웃</a></li>
+							<li><a href="/user/DeleteForm" class="link-dark rounded">회원 탈퇴</a></li>
+							<li><a href="/user/logout" class="link-dark rounded">로그아웃</a></li>
 						</ul>
 					</div>
 				</li>

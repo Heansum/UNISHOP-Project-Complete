@@ -41,7 +41,7 @@ public class PaymentController {
 	// 하나의 상품만 보여주는 view
 	// 결제화면으로 이동하는 컨트롤러
 	// 결제화면 보여주는 컨트롤러
-    @GetMapping("/payment/view/{id}")
+    @GetMapping("/user/payment/view/{id}")
     public String paymentPage(@PathVariable int id, Model model) {
     	// 유저가 선택한 장바구니에서 상품을 사게 id로 잡아줍니다.
     	// 즉 장바구니id를 잡고, 장바구니에서 선택한 상품의 id를 잡아서 그 값을 가져와야됩니다.
@@ -65,7 +65,7 @@ public class PaymentController {
 	
 	
 	//@RequestBody는 HTTP요청의 body 내용을 자바 객체로 매핑 하는 역할을 한다 
-	@PostMapping("/payment")
+	@PostMapping("/user/payment")
 	public @ResponseBody String payment(@RequestBody Payment payment) {
 		
 		User principal =(User) session.getAttribute("principal");

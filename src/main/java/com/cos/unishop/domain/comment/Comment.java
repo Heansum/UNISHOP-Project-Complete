@@ -1,6 +1,6 @@
 package com.cos.unishop.domain.comment;
 
-import java.util.List;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.cos.unishop.domain.payment.Payment;
+
 import com.cos.unishop.domain.product.Product;
 import com.cos.unishop.domain.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -43,13 +43,7 @@ public class Comment {
 	private Product product;
 
 
-	@Override
-	public String toString() {
-		return "Comment [id=" + id + ", registrationtime=" + registrationtime + ", productcs=" + productcs + ", score="
-				+ score + ", sizecs=" + sizecs + ", colorcs=" + colorcs + ", image=" + image + ", user=" + user
-				+ ", product=" + product + "]";
-	}
-
+	
 	
 
 }
