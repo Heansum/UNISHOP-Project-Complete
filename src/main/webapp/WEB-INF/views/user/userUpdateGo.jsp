@@ -62,10 +62,10 @@
 					<div class="collapse" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
-							<li><a href="/userUpdate" class="link-dark rounded">회원 정보 수정
+							<li><a href="/user/Certified" class="link-dark rounded">회원 정보 수정
 									</a></li>
-							<li><a href="#" class="link-dark rounded">회원 탈퇴</a></li>
-							<li><a href="#" class="link-dark rounded">로그아웃</a></li>
+							<li><a href="/user/DeleteForm" class="link-dark rounded">회원 탈퇴</a></li>
+							<li><a href="/user/logout" class="link-dark rounded">로그아웃</a></li>
 						</ul>
 					</div>
 				</li>

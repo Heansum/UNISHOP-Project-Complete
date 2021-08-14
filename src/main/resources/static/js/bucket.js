@@ -14,7 +14,7 @@ async function goPayment(productId, userId) {
 				id: productId
 		};
 		
-		let response = await fetch("/bucket", {
+		let response = await fetch("/user/bucket", {
 			method:"post",
 			body: JSON.stringify(postDto),
 			headers: {
@@ -36,20 +36,20 @@ async function goPayment(productId, userId) {
 			 
 			
 			
-			let response = await fetch("/bucket/id/"+productId,{method: "get"});
+			let response = await fetch("/user/bucket/id/"+productId,{method: "get"});
 			console.log(response);
 			let bucketId = await response.text();
-			location.href= "/payment/view/"+bucketId;
+			location.href= "/user/payment/view/"+bucketId;
 			
 		}
 
 		if (parseResponse === "no") {
 			
-			let response = await fetch("/bucket/id/"+productId,{method: "get"});
+			let response = await fetch("/user/bucket/id/"+productId,{method: "get"});
 			console.log(response);
 			let bucketId = await response.text();
 			
-			location.href = "/payment/view/" + bucketId;
+			location.href = "/user/payment/view/" + bucketId;
 		}
 		
 }
@@ -80,7 +80,7 @@ function buy() {
 					
 				// 저장만 하기 때문에 response로 String을 안받았음
 				// 왜냐하면 여러개를 던져주기 때문에!
-				let response = await fetch("/bucket/buy", {
+				let response = await fetch("/user/bucket/buy", {
 					method: "post",
 					body: JSON.stringify(postDto),
 					headers: {
@@ -93,10 +93,10 @@ function buy() {
 				if(parseResponse === "ok"){
 					// 여기는 결제화면으로 이동하는 컨트롤러입니다
 					// 보내주는 값은 bucketProducts Id값입니다
-					location.href="/payment/view/"+id;
+					location.href="/user/payment/view/"+id;
 				}
 				console.log(id+" : id 번째 물건 저장되었어요!");
-				location.href="/payment/view/"+id;
+				location.href="/user/payment/view/"+id;
 		      }
 				
 			});
@@ -126,7 +126,7 @@ async function inputBucket(productId, userId, productname, image, size, price) {
 		price: price
 	};
 
-	let response = await fetch("/bucket", {
+	let response = await fetch("/user/bucket", {
 		method: "post",
 		body: JSON.stringify(postDto),
 		headers: {
@@ -141,7 +141,7 @@ async function inputBucket(productId, userId, productname, image, size, price) {
 	if (parseResponse === "ok") {
 
 		if (confirm("선택한 상품이 장바구니에 담겼습니다, 장바구니로 이동하시겠습니까?") == true) {
-			location.href = "/bucket/" + userId;
+			location.href = "/user/bucket/" + userId;
 
 		} else {
 			return;
@@ -151,7 +151,7 @@ async function inputBucket(productId, userId, productname, image, size, price) {
 	if (parseResponse === "no") {
 
 		if (confirm("선택한 상품이 장바구니에 담겼습니다, 장바구니로 가시겠습니까?") == true) {
-			location.href = "/bucket/" + userId;
+			location.href = "/user/bucket/" + userId;
 
 		} else {
 			return;
@@ -188,7 +188,7 @@ function selectProductDelete(userId) {
 	
 						// 저장만 하기 때문에 response로 String을 안받았음
 						// 왜냐하면 여러개를 던져주기 때문에!
-						await fetch("/bucket/delete", {
+						await fetch("/user/bucket/delete", {
 							method: "delete",
 							body: JSON.stringify(postDto),
 							headers: {
@@ -204,7 +204,7 @@ function selectProductDelete(userId) {
 				if(userId != null){
 					console.log("네 나옵니다!!" + userId);
 				}
-			location.href = "/bucket/" + userId;
+			location.href = "/user/bucket/" + userId;
 			alert("상품이 삭제되었습니다.");
 		} else {
 			return;

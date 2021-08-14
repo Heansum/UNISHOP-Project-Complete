@@ -69,7 +69,8 @@ public class ProductController {
 //	    	return "product/payment";
 //	    }
 	    
-	
+	    
+	    //사이즈 선택하면 수정되는 컨트롤러
 	    @PutMapping("/sizeUpdate/{id}")
 	    public @ResponseBody String productSizeSelect(@PathVariable int id, @RequestBody Product product) {
 	    	

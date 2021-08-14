@@ -36,3 +36,13 @@ async function sizeSelect(id,productname,image,detail,price,category,gender){
 }
 
 
+	function goLoginCheck(){
+			alert("로그인하셔야 들어갈수 있는 페이지입니다.");
+			location.href = "/auth/loginForm";
+		}
+		
+		
+		function goLogin(){
+			alert("실행됨?");
+			location.href = "/auth/loginForm";
+		}
