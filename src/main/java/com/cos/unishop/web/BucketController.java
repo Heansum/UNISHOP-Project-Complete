@@ -32,7 +32,7 @@ public class BucketController {
 	private final BucketProductsRepository bucketProductsRepository;
 
 	// 장바구니에 물건 담는 컨트롤러
-	@PostMapping("/bucket")
+	@PostMapping("/user/bucket")
 	public @ResponseBody String input(@RequestBody Product product) {
 
 		User principal = (User) session.getAttribute("principal");
@@ -127,7 +127,7 @@ public class BucketController {
 	}
 
 	// 장바구니 보여주는 컨트롤러
-	@GetMapping("/bucket/{id}")
+	@GetMapping("/user/bucket/{id}")
 	public String showBucket(@PathVariable int id, Model model) {
 
 		// bucketProducts의 user id 찾기 ({id})
@@ -143,7 +143,7 @@ public class BucketController {
 	}
 
 	// 물건 보내주는 컨트롤러
-	@PostMapping("/bucket/buy")
+	@PostMapping("/user/bucket/buy")
 	public @ResponseBody void bucketSaveToPayment(@RequestBody BucketProducts bucket) {
 		System.out.println(bucket.getId() + ": 번째 물건 넘겨주기 시작!");
 		// 여기에 받은 ID를 가지고 bucketProductsRepository에 접근!
@@ -174,7 +174,7 @@ public class BucketController {
 	}
 
 	// 장바구니에서 물건 지우는 컨트롤러
-	@DeleteMapping("/bucket/delete")
+	@DeleteMapping("/user/bucket/delete")
 	public @ResponseBody void bucketProductDeleteById(@RequestBody BucketProducts bucket) {
 		// 받는 값은 bucketId 값이다 
 		// 여기서 보면 들어가는 건 Id 값이다!
@@ -197,7 +197,7 @@ public class BucketController {
 	
 	// 디테일에서 결제하기를 누르고 저장이 된 상태에 bucketId 리턴
 	// 가지고 오는 id값은 productId입니다
-	@GetMapping("/bucket/id/{id}")
+	@GetMapping("/user/bucket/id/{id}")
 	public @ResponseBody int getBucketId(@PathVariable int id){
 		User user = (User) session.getAttribute("principal");
 		System.out.println("/bucket/id 때려지나요?");

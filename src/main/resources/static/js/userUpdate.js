@@ -1,17 +1,17 @@
 
 function goUserUpdate(){
 	alert("회원님의 정보를 수정하시겠습니까?")
-	location.href="/userUpdateWont"
+	location.href="/user/Update"
 }
 
 async function userUpdate(id){
 	
 	event.preventDefault();
-	
+	console.log(id)
 	let form = document.querySelector("#updateForm");
 	const formData = new FormData(form);
 	
-	let response = await fetch("/userUpdate/"+id,{
+	let response = await fetch("/user/Update/"+id,{
 		method:"put",
 		body:formData,
 		headers:{}
@@ -22,7 +22,7 @@ async function userUpdate(id){
 	
 	if(parseResponse ==="ok"){
 		alert("회원정보 수정이 완료 됐습니다.")
-		location.href="/myPage";
+		location.href="/user/myPage";
 	}
 	
 }
@@ -30,7 +30,7 @@ async function userUpdate(id){
 async function goUserDelete(id){
 	alert("회원 탈퇴를 진행하시면 회원님의 정보가 삭제되며 그에 따라 추후에 발생하는 책임은 회원님에게 있습니다")
 	
-	let response = await fetch("/userDelete/"+id,{
+	let response = await fetch("/user/Delete/"+id,{
 		method: "delete"
 	});
 	let parseResponse = await response.text();

@@ -62,9 +62,8 @@
 							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
 							<li><a href="/user/Certified" class="link-dark rounded">회원 정보 수정
 									</a></li>
-							<li><a href="/userDeleteForm" class="link-dark rounded">회원 탈퇴</a></li>
-
-							<li><a href="#" class="link-dark rounded">로그아웃</a></li>
+							<li><a href="/user/DeleteForm" class="link-dark rounded">회원 탈퇴</a></li>
+							<li><a href="/user/logout" class="link-dark rounded">로그아웃</a></li>
 						</ul>
 					</div>
 				</li>

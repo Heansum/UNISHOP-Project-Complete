@@ -15,21 +15,26 @@
 <!-- 				<form -->
 <%-- 					onsubmit="sizeSelect(${productEntity.id},${productEntity.productname},${productEntity.image},${productEntity.detail},${productEntity.price},${productEntity.category},${productEntity.gender})" --%>
 <!-- 					id="size-form"> -->
-					<div class="input-wrap" style="width: 80%;">
-						<div class="input-group">
+<!-- 						신원이형 버전 -->
+<!-- 					<div class="input-wrap" style="width: 80%;"> -->
+<!-- 						<div class="input-group"> -->
+<!-- 							현섭버전 -->
+					<div class="input-wrap-detail">
+						<div class="input-group-detail">
 							<select class="form-select" id="size"
 								aria-label="Example select with button addon" name="size">
-								<option selected>Choose...</option>
+								<option selected>Size</option>
 								<option value="S">S</option>
 								<option value="M">M</option>
 								<option value="L">L</option>
 								<option value="XL">XL</option>
 							</select>
 							<!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
+							<button class="btn btn-outline-secondary" id="selectButton" type="button" onclick="sizeSelect('${productEntity.id}','${productEntity.productname}','${productEntity.image}','${productEntity.detail}','${productEntity.price}','${productEntity.category}','${productEntity.gender}')">
+						Select</button>
 						</div>
 					</div>
-					<button class="btn btn-outline-secondary" type="button" onclick="sizeSelect('${productEntity.id}','${productEntity.productname}','${productEntity.image}','${productEntity.detail}','${productEntity.price}','${productEntity.category}','${productEntity.gender}')">
-					SizeSelect</button>
+					
 <!-- 				</form> -->
 				<!-- 				사이즈끝 -->
 				<p>${productEntity.price} 원</p>
@@ -83,13 +88,20 @@
 
 
 		<!-- 고객 상품평 -->
+<!-- 		<section class="member-comments-box"> -->
+<!-- 		로그인안된상태면 상품평 쓰기 버튼 안보이도록수정 -->
 		<section class="member-comments-box">
-			
+		<!-- 상품평 쓰기 -->
+<!-- 		신원이형 버전 -->
+			<div class="input-comments" style="text-align: center; justify-content: flex-end;">
+		
+<!-- 			호겸이형 버전은 주석처리했습니다 -->
+<!-- 			<button type="button" class="pyong-btn" data-bs-toggle="modal" -->
+<!-- 				data-bs-target="#exampleModal">상품평 쓰기</button> -->
 			<!-- 모달 사용해서 상품평 바로 테이블에 넣기 -->
 			<!-- URL:https://getbootstrap.com/docs/5.0/components/modal/ -->
 
-			<!-- 상품평 쓰기 -->
-			<div class="input-comments" style="text-align: center; justify-content: flex-end;">
+			
 				<!-- Button trigger modal -->
 
 
@@ -237,7 +249,13 @@
 				<!-- 댓글 테이블 -->
 				<!-- DB에서 가져와서 던져줌 -->
 				<table class="table" id="table-yabal">
-				<button type="button" class="pyong-btn-sibak" data-bs-toggle="modal" data-bs-target="#exampleModal">상품평 쓰기</button>
+				<c:choose>
+				<c:when test="${empty sessionScope.principal}">
+				</c:when>
+				<c:otherwise>
+					<button type="button" class="pyong-btn-sibak" data-bs-toggle="modal" data-bs-target="#exampleModal">상품평 쓰기</button>
+				</c:otherwise>
+				</c:choose>
 					<thead>
 						<tr>
 							<th scope="col">#</th>

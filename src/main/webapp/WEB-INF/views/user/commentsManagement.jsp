@@ -21,9 +21,9 @@
 						aria-expanded="true">서비스 정보</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/CommentsManagement" class="link-dark rounded">상품평 관리</a></li>
-							<li><a href="/bucket/${principal.id}" class="link-dark rounded">장바구니</a></li>
-							<li><a href="/payment/${principal.id}" class="link-dark rounded">구매 목록</a></li>
+							<li><a href="/user/CommentsManagement" class="link-dark rounded">댓글 관리</a></li>
+							<li><a href="/user/bucket/${principal.id}" class="link-dark rounded">장바구니</a></li>
+							<li><a href="/user/payment/${principal.id}" class="link-dark rounded">구매 목록</a></li>
 						</ul>
 					</div>
 				</li>
@@ -60,13 +60,10 @@
 						aria-expanded="false">계정</button>
 					<div class="collapse" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-
-							<!-- <li><a href="#" class="link-dark rounded">New...</a></li> -->
 							<li><a href="/user/Certified" class="link-dark rounded">회원 정보 수정
 									</a></li>
-							<li><a href="/userDeleteForm" class="link-dark rounded">회원 탈퇴</a></li>
-
-							<li><a href="#" class="link-dark rounded">로그아웃</a></li>
+							<li><a href="/user/DeleteForm" class="link-dark rounded">회원 탈퇴</a></li>
+							<li><a href="/user/logout" class="link-dark rounded">로그아웃</a></li>
 						</ul>
 					</div>
 				</li>
@@ -109,7 +106,7 @@
 				</thead>
 				<tbody class="category-management">
 					<c:forEach var="comments" items="${commentsEntity}">
-						<tr>
+						<tr id="reply-${comments.id}">
 							<th scope="row">${comments.id}</th>
 							<td><img id="img1" src="/upload/${comments.image}" class="modal-img float" alt="..."></td>
 							<td>${comments.score}</td>
@@ -119,11 +116,11 @@
 							<td>${comments.productcs}</td>
 							<td>
 							<button type="button" class="pyong-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 20px;">수정하기</button>
-							<button type="button" class="pyong-btn">삭제</button>
+							<button type="button" class="pyong-btn" onclick="commentDelete(${comments.id})">삭제</button>
 							</td>
 						</tr>
 						
-					</c:forEach>
+					
 						
 <!-- 					<tr> -->
 <!-- 						<th scope="row">2</th> -->
@@ -175,10 +172,11 @@
 								<!-- 			모달바디 시작 -->
 								<div class="modal-start">
 									<!-- 여기에 폼있어요! -->
-									<form action="/commentSave" method="post"
-										enctype="multipart/form-data">
+									<form onsubmit="commentUpdate()" id="my-form">
 										<!-- 			상품코드 -->
-										<div>
+										
+										
+															<div>
 											<div class="input-parent">
 
 												<div class="input-wrap" style="display: none;">
@@ -188,29 +186,35 @@
 															type="number" class="form-control"
 															aria-label="Sizing example input"
 															aria-describedby="inputGroup-sizing-default"
-															value="${productEntity.id}" readonly="readonly"
-															name="productId">
+															value="${comments.id}" readonly="readonly"
+															name="id">
 													</div>
 												</div>
 											</div>
 										</div>
 
 										<div class="modal-flex">
-											
-												
-											
+
+
+
 											<section class="modal-img1">
 
-												<img id="img-modal" src="/upload/${productEntity.image}"
+												<img id="img-modal" src="/upload/${comments.image}"
 													class="modal-img" alt="...">
-													<div class="modal-text">
-													${productEntity.productname}</div>
-												
+												<div class="modal-text">${comments.product.productname}</div>
+
 
 
 
 
 											</section>
+										</div>
+										
+										<div class="modal-flex">
+											
+												
+											
+											
 										</div>
 										<div>
 											<div class="input-parent">
@@ -303,6 +307,8 @@
 					</div>
 				</div>
 				</form>
+				</c:forEach>
+				
 					</tbody>
 					
 				</table>
@@ -324,5 +330,5 @@
 </main>
 
 
-
+<script src="/js/commentManage.js"></script>
 <%@ include file="../layout/footer.jsp"%>
