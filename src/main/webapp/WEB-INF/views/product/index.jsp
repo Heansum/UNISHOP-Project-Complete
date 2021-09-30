@@ -11,11 +11,11 @@
 		<div class="carousel-indicators">
 			<button type="button" data-bs-target="#carouselExampleCaptions"
 				data-bs-slide-to="0" class="active" aria-current="true"
-				aria-label="Slide 1"></button>
+				aria-label="Slide 1" style="background-color: #eaeaea;"></button>
 			<button type="button" data-bs-target="#carouselExampleCaptions"
-				data-bs-slide-to="1" aria-label="Slide 2"></button>
+				data-bs-slide-to="1" aria-label="Slide 2" style="background-color: #eaeaea;"></button>
 			<button type="button" data-bs-target="#carouselExampleCaptions"
-				data-bs-slide-to="2" aria-label="Slide 3"></button>
+				data-bs-slide-to="2" aria-label="Slide 3" style="background-color: #eaeaea;"></button>
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">

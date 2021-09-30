@@ -54,7 +54,7 @@
 
         <hr id="hr"/>
 
-        <div class="contents-container">
+        <div class="contents-container" style="flex-direction: row; flex-wrap: wrap;">
         <c:forEach var="products" items="${productcEntity}">
           <div class="contents">
             

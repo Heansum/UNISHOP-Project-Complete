@@ -19,7 +19,7 @@
 <!-- 					<div class="input-wrap" style="width: 80%;"> -->
 <!-- 						<div class="input-group"> -->
 <!-- 							현섭버전 -->
-					<div class="input-wrap-detail">
+					<div class="input-wrap-detail" style="text-align: center;">
 						<div class="input-group-detail">
 							<select class="form-select" id="size"
 								aria-label="Example select with button addon" name="size">
@@ -30,13 +30,13 @@
 								<option value="XL">XL</option>
 							</select>
 							<!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
-							<button class="btn btn-outline-secondary" id="selectButton" type="button" onclick="sizeSelect('${productEntity.id}','${productEntity.productname}','${productEntity.image}','${productEntity.detail}','${productEntity.price}','${productEntity.category}','${productEntity.gender}')">
+							<button class="btn btn-outline-secondary" id="selectButton" type="button" style="margin-top: 10px;" onclick="sizeSelect('${productEntity.id}','${productEntity.productname}','${productEntity.image}','${productEntity.detail}','${productEntity.price}','${productEntity.category}','${productEntity.gender}')">
 						Select</button>
 						</div>
 					</div>
 					
-<!-- 				</form> -->
-				<!-- 				사이즈끝 -->
+			<!-- </form> -->
+				<!-- 사이즈끝 -->
 				<p>${productEntity.price} 원</p>
 			</section>
 

@@ -97,7 +97,7 @@
                 <!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
                 <th scope="row">
                   <!-- 여기에 EL로 구매일자 넣습니다 -->
-                  <div class="paymenttime-bucket">
+                  <div class="paymenttime-bucket" style="padding-top: 10%;">
                   ${buy.paymenttime}
                   </div>
                   <!-- 체크박스 -->

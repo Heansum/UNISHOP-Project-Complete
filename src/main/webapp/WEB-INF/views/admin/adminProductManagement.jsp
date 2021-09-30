@@ -90,7 +90,7 @@
 								data-bs-toggle="modal" data-bs-target="#exampleModal"
 								style="background-color: #f5f5f5; border: #f8f9fa; color: #383838;">
 								수정하기</button>
-							<button type="button" class="pyong-btn" onclick="productDelete(${product.id})">삭제</button></td>
+							<button type="button" class="btn btn-primary" onclick="productDelete(${product.id})" style="background-color: #f5f5f5; border: #f8f9fa; color: #383838;">삭제</button></td>
 
 					</tr>
 					<div class="modal fade" id="exampleModal" tabindex="-1"

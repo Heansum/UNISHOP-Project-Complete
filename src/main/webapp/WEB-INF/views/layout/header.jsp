@@ -141,15 +141,15 @@
 
 					<nav class="navbar navbar-light bg-light">
 						<div class="container-fluid">
-							<div class="icon">
+							<div class="icon" style="display: contents;">
 								<c:choose>
 									<c:when test="${empty sessionScope.principal}">
 										<!-- /* 변화 된 코드 로그인 */ -->
 										<button type="button" class="btn btn-light"
-											onclick="goLogin()">Login</button>
+											onclick="goLogin()" style="background: #eaeaea; font-weight: bold; border: 1px solid; border-color: #d6d6d6;">Login</button>
 										<!-- <a href="#"> -->
-										<img
-											src="https://img.icons8.com/ios-glyphs/30/000000/login-rounded-right--v1.png" />
+										<%-- <img
+											src="https://img.icons8.com/ios-glyphs/30/000000/login-rounded-right--v1.png" /> --%>
 										<!-- </a> -->
 									</c:when>
 									<c:otherwise>
@@ -165,7 +165,7 @@
 											<!-- 여기 로그아웃이미지 삽입 -->
 											<!-- 일단 버튼으로 때웁니다 -->
 											<button type="button" class="btn btn-light"
-												onclick="logout()">Login out</button>
+												onclick="logout()" style="width: 100px; background: #eaeaea; font-weight: bold; border: 1px solid; border-color: #d6d6d6;">Login out</button>
 <!-- 												"location.href='/user/logout'" -->
 										</div>
 									</c:otherwise>

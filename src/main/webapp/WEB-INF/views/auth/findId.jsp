@@ -16,7 +16,7 @@
 			<div class="form-floating">
 				<input type="text" class="form-control" id="textsms"
 					placeholder="phoneNumber" name="phoneNumber"> <label
-					for="floatingInput">PhoneNumber</label>
+					for="floatingInput">email</label>
 			</div>
 
 

@@ -103,7 +103,7 @@ public class AdminController {
 
 	// 관리자 상품등록컨트롤러
 	@PostMapping("/admin/update")
-	public String product(@Valid ProductDto productDto, BindingResult bindingResult) {
+	public String product(ProductDto productDto, BindingResult bindingResult) {
 
 		UUID uuid = UUID.randomUUID();
 		Product product = new Product();
