@@ -49,9 +49,9 @@
 - API명세서와 가이드라인에 따라서 API호출 및 응답
 
 - 사용한 API 
-	-coolsms(ID/PW 찾기시 문자 인증)
-	-import(결제)
-	-주소API
+	- coolsms(ID/PW 찾기시 문자 인증)
+	- import(결제)
+	- 주소API
 	
 - 공통 로직은 AOP와 intercepter로 묶어서 적용
 
