@@ -14,8 +14,9 @@
 	-페이지설계 /디자인/백엔드 기술담당
 
 
-🎬 [유튜브 링크](https://youtu.be/H8tKb5FBWG4)
-📕 [스토리 보드](https://www.figma.com/file/1l49U588J7vSp6tkarXMoB/model-%EC%A7%9C%EA%B8%B0?node-id=0%3A1)
+- 🎬 [유튜브 링크](https://youtu.be/H8tKb5FBWG4)
+
+- 📕 [스토리 보드](https://www.figma.com/file/1l49U588J7vSp6tkarXMoB/model-%EC%A7%9C%EA%B8%B0?node-id=0%3A1)
 
 
 ## 개요
@@ -57,13 +58,19 @@
 - 실행 환경
 	- Chrome
 
+
+
+
 ## 프로젝트에 사용한 라이브러리,의존성,승인키
 
 
-###주소 API 승인키
+
+
+### 주소 API 승인키
 ```
 https://www.juso.go.kr/addrlink/addrLinkUrl.do?confmKey=devU01TX0FVVEgyMDIxMDcwNTE3MjgyMzExMTM2MTE=&returnUrl=http://localhost:8000
 ```
+
 
 - cool sms 의존성
 
@@ -74,6 +81,8 @@ https://www.juso.go.kr/addrlink/addrLinkUrl.do?confmKey=devU01TX0FVVEgyMDIxMDcwN
     <version>2.2</version>
   </dependency>
 ```
+
+
 
 -JSP를 사용하기 위한 의존성
 
@@ -91,6 +100,8 @@ https://www.juso.go.kr/addrlink/addrLinkUrl.do?confmKey=devU01TX0FVVEgyMDIxMDcwN
 	<version>1.2</version>
 </dependency>
 ```
+
+
 
 ## 프로젝트 기본 yml파일 설정
 
@@ -135,10 +146,13 @@ spring:
 - DB에 커넥션하는 설정은 환경에 맞게 설정 해 줘야 합니다.
 	
 
+
 ## 🚀 핵심 트러블 슈팅
 
 
-###결제 리스트 구현시 DB모델링 모순을 해결했던 방법
+
+
+### 결제 리스트 구현시 DB모델링 모순을 해결했던 방법
 ```
 결제 데이터를 fetch요청으로 저장하는것 까지 완료하고 이제 구메리스트에 해당 회원의 결제정보를 마이페이지에서 관리하게하기위해서 저장된 데이터를 뿌리려고 했을때
 문제점을 발견 했다. 그 문제점은 바로 결제할때 상품의 정보를 저장하지 못했기때문. 그래서 결제시에 상품정보를 저장하려하니 db관계상 user에서 상품은 onetomany관계라서 컬랙션타입으로 돼있었다.
@@ -150,7 +164,9 @@ buy라는 구매정보만 저장하는 테이블을 만들어서 유저와 상�
  
 ```
 
-###이니시스 결제 api 호출 방법
+
+
+### 이니시스 결제 api 호출 방법
 ```
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -191,7 +207,7 @@ jQuery넣어주기!
 - 추가적인 파라미터값은 api문서 확인해서 추가할것!
 
 
-###결제성공시 파라메터
+### 결제성공시 파라메터
 ```
 "id":1,
 "apply_num":"",
@@ -235,22 +251,31 @@ jQuery넣어주기!
 
 
 
-###컴퓨터 옮겼을때 수정해야할 코드
+### 컴퓨터 옮겼을때 수정해야할 코드
 
 - utils에 myPath에 저장될 이미지경로(이거때문에 1시간날렸습니다...)
 - UserController에서 쿨sms보내는 코드 주석확인
 
 
-##😊 작업을 편하게 해줄 로직 모음 (테스트용 더미데이터 insert,그외 복붙해야하는 로직들)
 
 
-###관리자아이디 insert
+
+
+## 😊 작업을 편하게 해줄 로직 모음 (테스트용 더미데이터 insert,그외 복붙해야하는 로직들)
+
+
+
+
+### 관리자아이디 insert
 ```
 INSERT INTO admin_user(username, PASSWORD ,email ,address ,phonenumber ,NAME ,role)VALUES('ssar','1234','and@naver.com','부산','01011111111','이름','ADMIN');
 
 ```
 
-###데이터베이스 생성 방법
+
+
+
+### 데이터베이스 생성 방법
 ```sql
 CREATE USER 'unishop'@'%' IDENTIFIED BY 'korea1234';
 GRANT ALL PRIVILEGES ON *.* TO 'unishop'@'%';
@@ -258,10 +283,14 @@ CREATE database unishopdb;
 ```
 
 
-###JSTL teglib
+
+
+### JSTL teglib
 ```jsp
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 ```
+
+
 
 
 ### 더미데이터
@@ -269,6 +298,8 @@ CREATE database unishopdb;
 상품평 더미데이터
 INSERT INTO comment(productcs, registrationtime, score ,sizecs ,colorcs ,image , user_id, product_id)VALUES('상품평4','2021-08-08','5','조금 작아요','색감 좋아요','이미지 이름',1,1);
 ```
+
+
 
 
 ```
